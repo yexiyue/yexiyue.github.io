@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>基于indexedDB+ws的vue3+ts+koa的全栈练习demo | 红尘散仙</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b0aae218897fa9d8a9f76e9a77e0b3c6";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+        </script>
+    <meta name="description" content="心软不是病，回头才致命">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a6019651.css" as="style"><link rel="preload" href="/assets/js/app.350fb34b.js" as="script"><link rel="preload" href="/assets/js/5.a15f42d4.js" as="script"><link rel="preload" href="/assets/js/1.e580867d.js" as="script"><link rel="preload" href="/assets/js/21.7977f131.js" as="script"><link rel="prefetch" href="/assets/js/10.5cacfa0c.js"><link rel="prefetch" href="/assets/js/11.d120a05a.js"><link rel="prefetch" href="/assets/js/12.81e07b7c.js"><link rel="prefetch" href="/assets/js/13.4bdd887f.js"><link rel="prefetch" href="/assets/js/14.18a2e46a.js"><link rel="prefetch" href="/assets/js/15.dfda82a2.js"><link rel="prefetch" href="/assets/js/16.cd86f7af.js"><link rel="prefetch" href="/assets/js/17.920fcaf2.js"><link rel="prefetch" href="/assets/js/18.217a05c0.js"><link rel="prefetch" href="/assets/js/19.ea1320a3.js"><link rel="prefetch" href="/assets/js/20.e47e2e0b.js"><link rel="prefetch" href="/assets/js/22.9cf243c4.js"><link rel="prefetch" href="/assets/js/23.4de202c1.js"><link rel="prefetch" href="/assets/js/24.d914c8b0.js"><link rel="prefetch" href="/assets/js/25.c8d28b68.js"><link rel="prefetch" href="/assets/js/26.94a82e39.js"><link rel="prefetch" href="/assets/js/3.12e21826.js"><link rel="prefetch" href="/assets/js/4.95a2bd9f.js"><link rel="prefetch" href="/assets/js/6.5fbbeefc.js"><link rel="prefetch" href="/assets/js/7.5f1b2659.js"><link rel="prefetch" href="/assets/js/8.6af564f0.js"><link rel="prefetch" href="/assets/js/9.39ad1473.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a6019651.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-10718f33><div data-v-10718f33><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-10718f33 data-v-10718f33><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-5cb9a64e data-v-10718f33 data-v-10718f33><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>红尘散仙</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>红尘散仙</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-10718f33><div data-v-10718f33><div id="smart" class="wrapper-page" style="background-image:url(/3.jpg);background-position-x:center;background-position-y:center;background-size:cover;background-repeat-x:no-repeat;background-repeat-y:no-repeat;" data-v-10718f33><header class="navbar" data-v-10718f33><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="红尘散仙" class="logo"> <span class="site-name">红尘散仙</span></a> <div class="links"><div id="dayNightSwitch" class="generalWrapper" data-v-32f44868><a class="click" data-v-32f44868><div class="onOff daySwitch" data-v-32f44868><div class="star star1" data-v-32f44868></div> <div class="star star2" data-v-32f44868></div> <div class="star star3" data-v-32f44868></div> <div class="star star4" data-v-32f44868></div> <div class="star star5" data-v-32f44868></div> <div class="star sky" data-v-32f44868></div> <div class="sunMoon" data-v-32f44868><div class="crater crater1" data-v-32f44868></div> <div class="crater crater2" data-v-32f44868></div> <div class="crater crater3" data-v-32f44868></div> <div class="cloud part1" data-v-32f44868></div> <div class="cloud part2" data-v-32f44868></div></div></div></a></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/浅浅探索/" class="nav-link"><i class="iconfont undefined"></i>
+  浅浅探索
+</a></li><li class="dropdown-item"><!----> <a href="/categories/练习项目/" class="nav-link"><i class="iconfont undefined"></i>
+  练习项目
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-10718f33></div> <aside class="sidebar" data-v-10718f33><div class="personal-info-wrapper" data-v-03833281 data-v-10718f33><img src="/avatar-top.png" alt="author-avatar" class="personal-img" data-v-03833281> <h3 class="name" data-v-03833281>
+    红尘散仙
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>13</h3> <h6 data-v-03833281>文章</h6></div> <div data-v-03833281><h3 data-v-03833281>10</h3> <h6 data-v-03833281>标签</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/浅浅探索/" class="nav-link"><i class="iconfont undefined"></i>
+  浅浅探索
+</a></li><li class="dropdown-item"><!----> <a href="/categories/练习项目/" class="nav-link"><i class="iconfont undefined"></i>
+  练习项目
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-5cb9a64e data-v-10718f33><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>基于indexedDB+ws的vue3+ts+koa的全栈练习demo</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>红尘散仙</span>
+            
+          <!---->
+          2022
+        </a></span></div></div></div> <div data-v-10718f33><main class="page"><div class="page-title" style="display:none;"><h1 class="title">基于indexedDB+ws的vue3+ts+koa的全栈练习demo</h1> <div class="page-info" data-v-0efa1f05><i class="iconfont reco-account" data-v-0efa1f05><span data-v-0efa1f05>红尘散仙</span></i> <i class="iconfont reco-date" data-v-0efa1f05><span data-v-0efa1f05>2022-05-01</span></i> <i class="iconfont reco-eye" data-v-0efa1f05><span id="/blogs/2022/2022-05-01-vue3+koa+ts.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-0efa1f05><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-0efa1f05><span class="tag-item" data-v-0efa1f05>indexedDB</span><span class="tag-item" data-v-0efa1f05>typescript</span><span class="tag-item" data-v-0efa1f05>koa</span><span class="tag-item" data-v-0efa1f05>websocket</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div class="custom-block tip"><p class="custom-block-title">介绍</p> <p>做个demo练练手，纯自己思考，包括websocket的封装，indexedDB的封装。</p></div> <h1 id="chat-room"><a href="#chat-room" class="header-anchor">#</a> Chat Room</h1> <h2 id="一-背景"><a href="#一-背景" class="header-anchor">#</a> 一，背景</h2> <p>做个demo练练手，纯自己思考，包括websocket的封装，indexedDB的封装。</p> <p>做练习的过程中，发现平时学着感觉容易，但实际过程中并不是那么简单，另外框架的封装真的能提高效率，我在封装websocket前后端就用了一天多。造轮子的过程中各种动脑，经过这几天的练习，感觉头都快秃了。</p> <h2 id="二-简介"><a href="#二-简介" class="header-anchor">#</a> 二，简介</h2> <p>这个demo前后端全由个人开发，登录功能用后端koa提供接口，使用jwt鉴权，前端用fetch请求接口，聊天列表用了动态路由。用户之间消息前端通过原生webSocket实现，后端使用ws模块实现。支持群发和私聊。</p> <p>发现的不足：</p> <p>1.没能完美结合koa与ws，感觉他们之间很分散。</p> <p>2.fetch没能实现请求拦截添加鉴权请求头</p> <p>3.用户只有双方都在同一频道才能稳定通信，显得流程</p> <p>4.对ws开发流程还不是很了解，纯自摸索</p> <p>5.首次进入聊天界面不会立即加载消息记录，必须发送一次消息才可见</p> <p>6.以上缺陷都没去改进，感觉还是有所欠缺，需要在多学学</p> <h2 id="三-下面是使用截图"><a href="#三-下面是使用截图" class="header-anchor">#</a> 三.下面是使用截图</h2> <p>1.登录功能</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8148c2e52b7946f9a0325917d5e96480~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/83d360f5e65549af8a6d49e895b8c74f~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p> <p>2.聊天列表</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bf04eee0f4ba4caaa31e7d64c751522d~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220501213359285"></p> <p>3.不同的角度的聊天记录</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3a3cf06e6ee44b359a6f145068a7e378~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220501213536933"></p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98ba76a209764c62ae1d536a7b3c4c50~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220501213554717"></p> <h2 id="四-核心模块"><a href="#四-核心模块" class="header-anchor">#</a> 四，核心模块</h2> <h3 id="_1-对ws的封装"><a href="#_1-对ws的封装" class="header-anchor">#</a> 1.对ws的封装</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> WebSocketServer<span class="token punctuation">,</span> WebSocket <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ws'</span>
+<span class="token keyword">import</span> http <span class="token keyword">from</span> <span class="token string">'http'</span>
+<span class="token keyword">import</span> Application <span class="token keyword">from</span> <span class="token string">'koa'</span>
+<span class="token keyword">type</span> <span class="token class-name">Data</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token builtin">string</span>
+  data<span class="token operator">:</span> <span class="token builtin">any</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">Callback</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>ev<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> ws<span class="token operator">?</span><span class="token operator">:</span> WebSocket<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">Fn</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>ev<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> ws<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> Callback <span class="token operator">|</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">CreateWss</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> wss<span class="token operator">?</span><span class="token operator">:</span> WebSocketServer <span class="token operator">=</span> <span class="token keyword">undefined</span>
+  <span class="token keyword">public</span> server<span class="token operator">?</span><span class="token operator">:</span> http<span class="token punctuation">.</span>Server <span class="token operator">=</span> <span class="token keyword">undefined</span>
+  <span class="token keyword">public</span> userList<span class="token operator">:</span> Set<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">public</span> myClients<span class="token operator">:</span> Map<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> WebSocket<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">public</span> customEventList<span class="token operator">:</span> Map<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> Fn<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">public</span> <span class="token function">init</span><span class="token punctuation">(</span>app<span class="token operator">:</span> Application<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>wss <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocketServer</span><span class="token punctuation">(</span><span class="token punctuation">{</span> server<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>server <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>wss<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'connection'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>ws<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      ws<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>ev<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>customEventList<span class="token punctuation">.</span>size <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>customEventList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">(</span>ev<span class="token punctuation">,</span> ws<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      ws<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'客户端断开连接'</span><span class="token punctuation">)</span>
+        <span class="token keyword">const</span> list<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">const</span> old<span class="token operator">=</span>wss<span class="token punctuation">.</span>myClients
+        wss<span class="token punctuation">.</span>myClients<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span>v<span class="token punctuation">]</span> <span class="token keyword">of</span> old<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token operator">!=</span>ws<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+            wss<span class="token punctuation">.</span>myClients<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>v<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+          <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        wss<span class="token punctuation">.</span>myClients<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          v<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>
+            <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+              type<span class="token operator">:</span> <span class="token string">'getList'</span><span class="token punctuation">,</span>
+              data<span class="token operator">:</span> list<span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'******close'</span><span class="token punctuation">,</span>list<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>wss<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>wss<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'服务器关闭'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">//添加自定义事件</span>
+  <span class="token keyword">public</span> <span class="token function">addCustomEvent</span><span class="token punctuation">(</span>eventName<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> cb<span class="token operator">:</span> Callback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fn<span class="token operator">:</span> <span class="token function-variable function">Fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span>ev<span class="token punctuation">,</span> ws<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> data<span class="token operator">:</span> Data <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>ev<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>type <span class="token operator">==</span> eventName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">cb</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> ws<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>customEventList<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>eventName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>customEventList<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>eventName<span class="token punctuation">,</span> fn<span class="token punctuation">)</span>
+      <span class="token comment">/* console.log(eventName,this.customEventList) */</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> wss <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CreateWss</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre></div><h3 id="_2-使用"><a href="#_2-使用" class="header-anchor">#</a> 2.使用</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>wss<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./wss'</span>
+<span class="token keyword">type</span> <span class="token class-name">Data</span><span class="token operator">=</span><span class="token punctuation">{</span>
+  type<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span><span class="token builtin">any</span>
+<span class="token punctuation">}</span>
+wss<span class="token punctuation">.</span><span class="token function">addCustomEvent</span><span class="token punctuation">(</span><span class="token string">'userList'</span><span class="token punctuation">,</span><span class="token punctuation">(</span>ev<span class="token operator">:</span>Data<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>ev<span class="token punctuation">.</span>data <span class="token keyword">as</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>v<span class="token operator">:</span><span class="token punctuation">{</span>username<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>password<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    wss<span class="token punctuation">.</span>userList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>username<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+wss<span class="token punctuation">.</span><span class="token function">addCustomEvent</span><span class="token punctuation">(</span><span class="token string">'idMapWs'</span><span class="token punctuation">,</span><span class="token punctuation">(</span>ev<span class="token operator">:</span>Data<span class="token punctuation">,</span>ws<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token comment">//通过id映射</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>wss<span class="token punctuation">.</span>myClients<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>ev<span class="token punctuation">.</span>data<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    wss<span class="token punctuation">.</span>myClients<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>ev<span class="token punctuation">.</span>data<span class="token punctuation">.</span>id<span class="token punctuation">,</span>ws<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+wss<span class="token punctuation">.</span><span class="token function">addCustomEvent</span><span class="token punctuation">(</span><span class="token string">'getList'</span><span class="token punctuation">,</span><span class="token punctuation">(</span>ev<span class="token operator">:</span>Data<span class="token punctuation">,</span>ws<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> list<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> wss<span class="token punctuation">.</span>myClients<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  wss<span class="token punctuation">.</span>myClients<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    v<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      type<span class="token operator">:</span><span class="token string">'getList'</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span>list
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      type<span class="token operator">:</span><span class="token string">'getList'</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span>list
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+wss<span class="token punctuation">.</span><span class="token function">addCustomEvent</span><span class="token punctuation">(</span><span class="token string">'sendMsg'</span><span class="token punctuation">,</span><span class="token punctuation">(</span>ev<span class="token operator">:</span>Data<span class="token punctuation">,</span>ws<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> data<span class="token operator">=</span>ev<span class="token punctuation">.</span>data
+  <span class="token keyword">const</span> <span class="token punctuation">{</span>targetId<span class="token punctuation">,</span>whoSendId<span class="token punctuation">}</span><span class="token operator">=</span>data
+  <span class="token keyword">if</span><span class="token punctuation">(</span>targetId<span class="token operator">==</span><span class="token string">'all'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    wss<span class="token punctuation">.</span>myClients<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">!=</span>whoSendId<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        v<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          type<span class="token operator">:</span><span class="token string">'receiveMsg'</span><span class="token punctuation">,</span>
+          data
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    wss<span class="token punctuation">.</span>myClients<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>targetId<span class="token punctuation">)</span><span class="token operator">?.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      type<span class="token operator">:</span><span class="token string">'receiveMsg'</span><span class="token punctuation">,</span>
+      data
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ev<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div><h3 id="_3-前端对websocket的简单封装"><a href="#_3-前端对websocket的简单封装" class="header-anchor">#</a> 3.前端对webSocket的简单封装</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">Callback</span><span class="token operator">=</span><span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>data<span class="token operator">:</span><span class="token punctuation">{</span>type<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>data<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">Fn</span><span class="token operator">=</span><span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>ev<span class="token operator">:</span>MessageEvent<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator">:</span>Callback<span class="token operator">|</span><span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name"><span class="token constant">WS</span></span><span class="token punctuation">{</span>
+  <span class="token keyword">public</span> ws<span class="token operator">:</span>WebSocket<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> cbList<span class="token operator">:</span>Fn<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ws<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">WebSocket</span><span class="token punctuation">(</span><span class="token string">'ws://192.168.10.18:8000'</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">private</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ws<span class="token punctuation">.</span><span class="token function-variable function">onopen</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'打开连接'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ws<span class="token punctuation">.</span><span class="token function-variable function">onmessage</span><span class="token operator">=</span><span class="token punctuation">(</span>ev<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>cbList<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>cbList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>fn<span class="token operator">=&gt;</span><span class="token function">fn</span><span class="token punctuation">(</span>ev<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ws<span class="token punctuation">.</span><span class="token function-variable function">onerror</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'websocket出现错误'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ws<span class="token punctuation">.</span><span class="token function-variable function">onclose</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'关闭连接'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token function">addEvent</span><span class="token punctuation">(</span>eventName<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>cb<span class="token operator">:</span>Callback<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">fn</span><span class="token operator">=</span><span class="token punctuation">(</span>ev<span class="token operator">:</span>MessageEvent<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token keyword">const</span> data<span class="token operator">=</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>ev<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>type<span class="token operator">==</span>eventName<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">cb</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>cbList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token function">send</span><span class="token punctuation">(</span>data<span class="token operator">:</span>Data<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>ws<span class="token punctuation">.</span>readyState<span class="token operator">==</span><span class="token keyword">this</span><span class="token punctuation">.</span>ws<span class="token punctuation">.</span><span class="token constant">OPEN</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>ws<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>ws<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> useWs<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name"><span class="token constant">WS</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span>useWs<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_4-数据展示同时也是最难的部分"><a href="#_4-数据展示同时也是最难的部分" class="header-anchor">#</a> 4.数据展示同时也是最难的部分</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>window<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{route.query.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Show-vue</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>route.query.id==<span class="token punctuation">'</span>all<span class="token punctuation">'</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">#default</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item in store.msgList<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.dateTime<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>[item.whoSendId==route.query.id?<span class="token punctuation">'</span>right<span class="token punctuation">'</span>:<span class="token punctuation">'</span><span class="token punctuation">'</span>]<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>{{item.whoSendId}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+            {{item.msg}}
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Show-vue</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Show-vue</span> <span class="token attr-name">v-else</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">#default</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item in store.msgList<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.dateTime<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>[item.whoSendId==myId?<span class="token punctuation">'</span>right<span class="token punctuation">'</span>:<span class="token punctuation">'</span><span class="token punctuation">'</span>]<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>{{item.whoSendId}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+            {{item.msg}}
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Show-vue</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>msg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>sendMsg(route.query.id)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>发送<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ts<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useRoute <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useWs <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../hocks/ws'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useUserStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../store/store'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>ref<span class="token punctuation">,</span>toRaw<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> ShowVue <span class="token keyword">from</span> <span class="token string">'./Show.vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> route<span class="token operator">=</span><span class="token function">useRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useUserStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token literal-property property">myId</span><span class="token operator">:</span>string<span class="token operator">=</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> string
+
+<span class="token keyword">const</span> msg<span class="token operator">=</span><span class="token function">ref</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sendMsg</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">id</span><span class="token operator">:</span>string</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token literal-property property">data</span><span class="token operator">:</span>MsgData<span class="token operator">=</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">whoSendId</span><span class="token operator">:</span>myId<span class="token punctuation">,</span>
+      <span class="token literal-property property">targetId</span><span class="token operator">:</span>id<span class="token punctuation">,</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span>msg<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+      <span class="token literal-property property">dateTime</span><span class="token operator">:</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  useWs<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span><span class="token string">'sendMsg'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">data</span><span class="token operator">:</span>data
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  store<span class="token punctuation">.</span>msgList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token comment">/* console.log(toRaw(data)) */</span>
+  <span class="token comment">/* console.log(store.msgList) */</span>
+  msg<span class="token punctuation">.</span>value<span class="token operator">=</span><span class="token string">''</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* store.$subscribe(()=&gt;{
+  store.msgList.forEach(v=&gt;{
+    const list:Set&lt;MsgData&gt;=new Set()
+    if((v.whoSendId==myId &amp;&amp; v.targetId==route.query.id) || (v.whoSendId==route.query.id &amp;&amp; v.targetId==myId) ){
+      if(store.pTp.has([myId,route.query.id])){
+        store.pTp.get([myId,route.query.id])?.add(v)
+      }else{
+        
+        list.add(v)
+        store.pTp.set([myId,route.query.id],list)
+      }
+    }
+  })
+  console.log(store.pTp)
+}) */</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>less<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+
+
+<span class="token selector">.window</span><span class="token punctuation">{</span>
+    <span class="token property">flex</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">&quot;../assets/2054297.jpg&quot;</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+    <span class="token property">background-position</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
+    <span class="token selector">header,footer</span><span class="token punctuation">{</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> 15vh<span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+      <span class="token property">backdrop-filter</span><span class="token punctuation">:</span> <span class="token function">blur</span><span class="token punctuation">(</span>6px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>252<span class="token punctuation">,</span> 250<span class="token punctuation">,</span> 250<span class="token punctuation">,</span> 0.219<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">header</span><span class="token punctuation">{</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> 55px<span class="token punctuation">;</span>
+      <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>45deg<span class="token punctuation">,</span><span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.5<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 225<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0.5<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">rgba</span><span class="token punctuation">(</span>68<span class="token punctuation">,</span> 240<span class="token punctuation">,</span> 52<span class="token punctuation">,</span> 0.5<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.5<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token property">background-size</span><span class="token punctuation">:</span> 200% 100%<span class="token punctuation">;</span>
+      <span class="token property">background-position</span><span class="token punctuation">:</span> -100% 100%<span class="token punctuation">;</span>
+      <span class="token property">animation</span><span class="token punctuation">:</span> headerMove 5s  infinite  ease-in-out<span class="token punctuation">;</span>
+      <span class="token atrule"><span class="token rule">@keyframes</span> headerMove</span><span class="token punctuation">{</span>
+        <span class="token selector">0%</span><span class="token punctuation">{</span>
+          <span class="token property">background-position</span><span class="token punctuation">:</span> -100% 100%<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">100%</span><span class="token punctuation">{</span>
+          <span class="token property">background-position</span><span class="token punctuation">:</span> 100% 100%<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">p</span><span class="token punctuation">{</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 55vh<span class="token punctuation">;</span>
+        <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+        <span class="token property">line-height</span><span class="token punctuation">:</span> 55px<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">footer</span><span class="token punctuation">{</span>
+      <span class="token selector">p</span><span class="token punctuation">{</span>
+        <span class="token property">margin-top</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">input</span><span class="token punctuation">{</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 35px<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+        <span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+        <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #fff<span class="token punctuation">;</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+        <span class="token property">margin-left</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+        <span class="token property">transition</span><span class="token punctuation">:</span> .5s<span class="token punctuation">;</span>
+        <span class="token selector">&amp;:hover</span><span class="token punctuation">{</span>
+          <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0px 0px 2px 2px #fff<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">button</span><span class="token punctuation">{</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 35px<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+        <span class="token property">margin-left</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> 25px<span class="token punctuation">;</span>
+        <span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+        <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #fff<span class="token punctuation">;</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>77<span class="token punctuation">,</span> 221<span class="token punctuation">,</span> 226<span class="token punctuation">,</span> 0.685<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+        <span class="token property">transition</span><span class="token punctuation">:</span> .5s<span class="token punctuation">;</span>
+        <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+        <span class="token comment">/* letter-spacing: 5px; */</span>
+        <span class="token selector">&amp;:hover</span><span class="token punctuation">{</span>
+          <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0px 0px 5px 2px #fff<span class="token punctuation">;</span>
+          <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>38<span class="token punctuation">,</span> 114<span class="token punctuation">,</span> 230<span class="token punctuation">,</span> 0.774<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.container</span><span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+      <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+      <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+      <span class="token selector">span</span><span class="token punctuation">{</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+        <span class="token comment">/* color: white; */</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 26px<span class="token punctuation">;</span>
+        <span class="token property">line-height</span><span class="token punctuation">:</span> 26px<span class="token punctuation">;</span>
+        <span class="token property">margin</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span> 0 5px<span class="token punctuation">;</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>210<span class="token punctuation">,</span> 235<span class="token punctuation">,</span> 230<span class="token punctuation">,</span> 0.671<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+        <span class="token property">backdrop-filter</span><span class="token punctuation">:</span> <span class="token function">blur</span><span class="token punctuation">(</span>6px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token selector">div</span><span class="token punctuation">{</span>
+          <span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token punctuation">;</span>
+          <span class="token property">height</span><span class="token punctuation">:</span> 26px<span class="token punctuation">;</span>
+          <span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
+          <span class="token property">line-height</span><span class="token punctuation">:</span> 26px<span class="token punctuation">;</span>
+          <span class="token comment">/* margin: 5px; */</span>
+          <span class="token property">margin-right</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+          <span class="token property">padding</span><span class="token punctuation">:</span> 0 5px<span class="token punctuation">;</span>
+          <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>77<span class="token punctuation">,</span> 204<span class="token punctuation">,</span> 130<span class="token punctuation">,</span> 0.692<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token property">border-radius</span><span class="token punctuation">:</span> 26px<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token property">align-items</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.right</span><span class="token punctuation">{</span>
+    <span class="token property">align-self</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>五，完整项目请看GitHub</p> <p><a href="https://github.com/yexiyue/chat_room" target="_blank" rel="noopener noreferrer">yexiyue/chat_room: 基于indexedDB+vue+ts+pinia+websocket+koa的自己做练习的demo (github.com)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022/6/14 14:25:53</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.350fb34b.js" defer></script><script src="/assets/js/5.a15f42d4.js" defer></script><script src="/assets/js/1.e580867d.js" defer></script><script src="/assets/js/21.7977f131.js" defer></script>
+  </body>
+</html>
