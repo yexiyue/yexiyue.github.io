@@ -65,6 +65,7 @@ module.exports = {
         "text": "标签"
       }
     },
+    //配置有情链接
     "friendLink": [
       {
         "title": "另一个博客",
@@ -79,7 +80,7 @@ module.exports = {
         "link": "https://fjksng.github.io/"
       },
     ],
-
+    //配置评论，比较复杂建议自己百度
     "valineConfig": {
       "appId": "XoYVGebrakOU2FA6fhWOCGxA-gzGzoHsz",// your appId
       "appKey": "z8fnOR0R5kyLwEAoTdszjTvE", // your appKey
