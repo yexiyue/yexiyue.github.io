@@ -163,10 +163,11 @@
       },
       //配置列表封面图
       cover() {
-        return this.$themeConfig.covers[new Date().getDay()] || '/2.jpg'
+        //主页面随机渲染
+        return this.$themeConfig.covers[Math.ceil(Math.random()*100)%this.$themeConfig.covers.length]
       },
       pageCover() {
-        return this.$page.frontmatter.cover || this.$themeConfig.covers[new Date().getDay()] || '/2.jpg'
+        return this.cover /* this.$page.frontmatter.cover || this.$themeConfig.covers[Math.ceil(Math.random()*100)%this.$themeConfig.covers.length] */
       },
       shouldShowNavbar() {
         const {themeConfig} = this.$site

@@ -147,13 +147,26 @@ module.exports = {
     //配置背景图片，7天每天一张自动更换
     //放public下名字跟下面一样
     "covers": [
-      '/7.jpg',
-      '/1.jpg',
-      '/2.jpg',
-      '/3.jpg',
-      '/4.jpg',
-      '/5.jpg',
-      '/6.jpg'
+      '/homeImage/1.jpg',
+      '/homeImage/2.jpg',
+      '/homeImage/3.jpg',
+      '/homeImage/4.jpg',
+      '/homeImage/5.jpg',
+      '/homeImage/6.jpg',
+      '/homeImage/7.jpg',
+      '/homeImage/8.jpg',
+      '/homeImage/9.jpg',
+      '/homeImage/10.jpg',
+      '/homeImage/11.jpg',
+      '/homeImage/12.jpg',
+      '/homeImage/13.jpg',
+      '/homeImage/14.jpg',
+      '/homeImage/15.jpg',
+      '/homeImage/16.jpg',
+      '/homeImage/17.jpg',
+      '/homeImage/18.jpg',
+      '/homeImage/19.jpg',
+      '/homeImage/20.jpg',
     ],
     "codeTheme": "tomorrow"
   },
