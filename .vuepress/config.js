@@ -144,7 +144,7 @@ module.exports = {
       "en": "I just want to stand and earn money."
     }
     ],
-    //配置背景图片，7天每天一张自动更换
+    //配置背景图片，每次刷新自动
     //放public下名字跟下面一样
     "covers": [
       '/homeImage/1.jpg',
