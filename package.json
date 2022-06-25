@@ -4,8 +4,7 @@
   "author": "zeal",
   "scripts": {
     "dev": "vuepress dev .",
-    "build": "vuepress build .",
-    "deploy": "./deploy.sh"
+    "build": "vuepress build ."
   },
   "devDependencies": {
     "glob": "^7.1.6",
