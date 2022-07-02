@@ -167,7 +167,7 @@
         return this.$themeConfig.covers[Math.ceil(Math.random()*100)%this.$themeConfig.covers.length]
       },
       pageCover() {
-        return this.cover /* this.$page.frontmatter.cover || this.$themeConfig.covers[Math.ceil(Math.random()*100)%this.$themeConfig.covers.length] */
+        return /* this.cover */ this.$page.frontmatter.cover || this.$themeConfig.covers[Math.ceil(Math.random()*100)%this.$themeConfig.covers.length]
       },
       shouldShowNavbar() {
         const {themeConfig} = this.$site
