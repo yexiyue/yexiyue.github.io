@@ -1,0 +1,23 @@
+{
+    "blog header": {
+      "scope": "markdown",
+      "prefix": "blog",
+      "body": [
+        "---",
+        "title: ",
+        "date: 2022-07-02",
+        "cover: /homeImage/16.jpg",
+        "tags:",
+        " - vite",
+        "categories:",
+        " - 学习笔记",
+        "sticky: false",
+        "---",
+        "::: tip 介绍",
+        " ",
+        ":::",
+        "<!-- more -->"
+      ],
+      "description": "my blog header"
+    }
+  }
