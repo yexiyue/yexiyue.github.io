@@ -67,18 +67,7 @@ module.exports = {
     },
     //配置有情链接
     "friendLink": [
-      {
-        "title": "另一个博客",
-        "desc": "红尘散仙",
-        "logo": "https://s2.loli.net/2022/06/14/fgbwH1c5dlZUiuy.jpg",
-        "link": "https://yexiyue.github.io/"
-      },
-      {
-        "title": "冯敬凯",
-        "desc": "冯敬凯",
-        "logo": "https://s2.loli.net/2022/06/14/fgbwH1c5dlZUiuy.jpg",
-        "link": "https://fjksng.github.io/"
-      },
+      
     ],
     //配置评论，比较复杂建议自己百度
     "valineConfig": {
