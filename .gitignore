@@ -85,3 +85,5 @@ scripts
 
 default.conf
 Dockerfile
+
+dist
