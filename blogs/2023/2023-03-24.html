@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vite学习 | 红尘散仙</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b0aae218897fa9d8a9f76e9a77e0b3c6";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+        </script>
+    <meta name="description" content="心软不是病，回头才致命">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e1a20b5e.css" as="style"><link rel="preload" href="/assets/js/app.696b7c8f.js" as="script"><link rel="preload" href="/assets/js/5.ba03b2d0.js" as="script"><link rel="preload" href="/assets/js/1.8dbbe507.js" as="script"><link rel="preload" href="/assets/js/62.570cf894.js" as="script"><link rel="prefetch" href="/assets/js/10.39c4e951.js"><link rel="prefetch" href="/assets/js/11.ddcceb21.js"><link rel="prefetch" href="/assets/js/12.8f9588c4.js"><link rel="prefetch" href="/assets/js/13.d0445c72.js"><link rel="prefetch" href="/assets/js/14.95abd326.js"><link rel="prefetch" href="/assets/js/15.fde7e788.js"><link rel="prefetch" href="/assets/js/16.0cd67085.js"><link rel="prefetch" href="/assets/js/17.0b085c4a.js"><link rel="prefetch" href="/assets/js/18.7f357ac0.js"><link rel="prefetch" href="/assets/js/19.f7b5c911.js"><link rel="prefetch" href="/assets/js/20.7edabbfb.js"><link rel="prefetch" href="/assets/js/21.f69a9fcf.js"><link rel="prefetch" href="/assets/js/22.517eb2c3.js"><link rel="prefetch" href="/assets/js/23.330f93d4.js"><link rel="prefetch" href="/assets/js/24.22441a6c.js"><link rel="prefetch" href="/assets/js/25.f20b5e19.js"><link rel="prefetch" href="/assets/js/26.81578250.js"><link rel="prefetch" href="/assets/js/27.84619ce7.js"><link rel="prefetch" href="/assets/js/28.22271419.js"><link rel="prefetch" href="/assets/js/29.0fb8ae1d.js"><link rel="prefetch" href="/assets/js/3.09096582.js"><link rel="prefetch" href="/assets/js/30.c9080d5e.js"><link rel="prefetch" href="/assets/js/31.90a1362d.js"><link rel="prefetch" href="/assets/js/32.12fa5a30.js"><link rel="prefetch" href="/assets/js/33.5bd2b32a.js"><link rel="prefetch" href="/assets/js/34.2f22532f.js"><link rel="prefetch" href="/assets/js/35.e2d8a8e6.js"><link rel="prefetch" href="/assets/js/36.f742b295.js"><link rel="prefetch" href="/assets/js/37.67697b5f.js"><link rel="prefetch" href="/assets/js/38.f7102104.js"><link rel="prefetch" href="/assets/js/39.12cd1782.js"><link rel="prefetch" href="/assets/js/4.ff567da2.js"><link rel="prefetch" href="/assets/js/40.a6f8a7e2.js"><link rel="prefetch" href="/assets/js/41.07a09264.js"><link rel="prefetch" href="/assets/js/42.e4f6c352.js"><link rel="prefetch" href="/assets/js/43.b9519955.js"><link rel="prefetch" href="/assets/js/44.b3f0a197.js"><link rel="prefetch" href="/assets/js/45.8f7a28ea.js"><link rel="prefetch" href="/assets/js/46.08cc804d.js"><link rel="prefetch" href="/assets/js/47.40f1cd36.js"><link rel="prefetch" href="/assets/js/48.cb77e2e3.js"><link rel="prefetch" href="/assets/js/49.af5cf5e6.js"><link rel="prefetch" href="/assets/js/50.1120fed4.js"><link rel="prefetch" href="/assets/js/51.d7c96089.js"><link rel="prefetch" href="/assets/js/52.363cf06c.js"><link rel="prefetch" href="/assets/js/53.a72352fe.js"><link rel="prefetch" href="/assets/js/54.4df040e8.js"><link rel="prefetch" href="/assets/js/55.0120897a.js"><link rel="prefetch" href="/assets/js/56.0dc56fc2.js"><link rel="prefetch" href="/assets/js/57.db800e7b.js"><link rel="prefetch" href="/assets/js/58.f84c3064.js"><link rel="prefetch" href="/assets/js/59.f461979e.js"><link rel="prefetch" href="/assets/js/6.8f912b58.js"><link rel="prefetch" href="/assets/js/60.fec391d6.js"><link rel="prefetch" href="/assets/js/61.f58250e3.js"><link rel="prefetch" href="/assets/js/63.5813b1f2.js"><link rel="prefetch" href="/assets/js/64.ab4ea21b.js"><link rel="prefetch" href="/assets/js/65.9f75cda7.js"><link rel="prefetch" href="/assets/js/66.d3042ded.js"><link rel="prefetch" href="/assets/js/7.7e002afc.js"><link rel="prefetch" href="/assets/js/8.2167831e.js"><link rel="prefetch" href="/assets/js/9.cae86134.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e1a20b5e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1db74182><div data-v-1db74182><div id="loader-wrapper" class="loading-wrapper" data-v-57c58703 data-v-1db74182 data-v-1db74182><div class="loader-main" data-v-57c58703><div data-v-57c58703></div><div data-v-57c58703></div><div data-v-57c58703></div><div data-v-57c58703></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-5cb9a64e data-v-1db74182 data-v-1db74182><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>红尘散仙</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>红尘散仙</span>
+            
+          <span data-v-5cb9a64e>2022 - </span>
+          2023
+        </a></span></div></div> <div class="hide" data-v-1db74182><div data-v-1db74182><div id="smart" class="wrapper-page" style="background-image:url(/homeImage/9.jpg);background-position-x:center;background-position-y:center;background-size:cover;background-repeat-x:no-repeat;background-repeat-y:no-repeat;" data-v-1db74182><header class="navbar" data-v-1db74182><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="红尘散仙" class="logo"> <span class="site-name">红尘散仙</span></a> <div class="links"><div id="dayNightSwitch" class="generalWrapper" data-v-32f44868><a class="click" data-v-32f44868><div class="onOff daySwitch" data-v-32f44868><div class="star star1" data-v-32f44868></div> <div class="star star2" data-v-32f44868></div> <div class="star star3" data-v-32f44868></div> <div class="star star4" data-v-32f44868></div> <div class="star star5" data-v-32f44868></div> <div class="star sky" data-v-32f44868></div> <div class="sunMoon" data-v-32f44868><div class="crater crater1" data-v-32f44868></div> <div class="crater crater2" data-v-32f44868></div> <div class="crater crater3" data-v-32f44868></div> <div class="cloud part1" data-v-32f44868></div> <div class="cloud part2" data-v-32f44868></div></div></div></a></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/练习项目/" class="nav-link"><i class="iconfont undefined"></i>
+  练习项目
+</a></li><li class="dropdown-item"><!----> <a href="/categories/浅浅探索/" class="nav-link"><i class="iconfont undefined"></i>
+  浅浅探索
+</a></li><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="iconfont undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试系列/" class="nav-link"><i class="iconfont undefined"></i>
+  面试系列
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1db74182></div> <aside class="sidebar" data-v-1db74182><div class="personal-info-wrapper" data-v-03833281 data-v-1db74182><img src="/avatar-top.png" alt="author-avatar" class="personal-img" data-v-03833281> <h3 class="name" data-v-03833281>
+    红尘散仙
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>52</h3> <h6 data-v-03833281>文章</h6></div> <div data-v-03833281><h3 data-v-03833281>38</h3> <h6 data-v-03833281>标签</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/练习项目/" class="nav-link"><i class="iconfont undefined"></i>
+  练习项目
+</a></li><li class="dropdown-item"><!----> <a href="/categories/浅浅探索/" class="nav-link"><i class="iconfont undefined"></i>
+  浅浅探索
+</a></li><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="iconfont undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试系列/" class="nav-link"><i class="iconfont undefined"></i>
+  面试系列
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-5cb9a64e data-v-1db74182><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>vite学习</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>红尘散仙</span>
+            
+          <span data-v-5cb9a64e>2022 - </span>
+          2023
+        </a></span></div></div></div> <div data-v-1db74182><main class="page"><div class="page-title" style="display:none;"><h1 class="title">vite学习</h1> <div class="page-info" data-v-0efa1f05><i class="iconfont reco-account" data-v-0efa1f05><span data-v-0efa1f05>红尘散仙</span></i> <i class="iconfont reco-date" data-v-0efa1f05><span data-v-0efa1f05>2023-03-24</span></i> <i class="iconfont reco-eye" data-v-0efa1f05><span id="/blogs/2023/2023-03-24.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-0efa1f05><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-0efa1f05><span class="tag-item" data-v-0efa1f05>vite</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div class="custom-block tip"><p class="custom-block-title">介绍</p> <p>vite的基础学习，了解了常用配置，插件的编写等</p></div> <h1 id="vite学习"><a href="#vite学习" class="header-anchor">#</a> vite学习</h1> <h2 id="_1-vite是什么"><a href="#_1-vite是什么" class="header-anchor">#</a> 1.vite是什么?</h2> <p><strong>一句话说明: Vite是一 种新型的前端构建工具，它能显著改善前端开发体验。</strong></p> <p><a href="https://cn.vitejs.dev/guide/why.html" target="_blank" rel="noopener noreferrer">为什么选 Vite | Vite 官方中文文档 (vitejs.dev)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>官网详细说明为什么选vite</p> <p>vite采用esm方式进行构建</p> <p>ES modules (ESM)是JavaScript官方的标准化模块系统。</p> <p>ESM标准规范了如何把文件解析为模块记录，如何实例化和如何运行模块。</p> <p>ESM则使用称为实时绑定(Live Binding)的方式。导出和导入的模块都指向相同的内存地址(即值引用)。</p> <p>所以，当导出模块内导出的值改变后，导入模块中的值也实时改变了。</p> <p><strong>什么叫 编译时输出接口? 什么叫 运行时加载?</strong></p> <p>ESM 之所以被称为 编译时输出接口，是因为它的模块解析是发生在 编译阶段。</p> <p>也就是说，import 和 export 这些关键字是在编译阶段就做了模块解析，</p> <p>这些关键字的使用如果不符合语法规范，在编译阶段就会抛出语法错误。</p> <p>ESM 的运行机制是，JS 引擎在对脚本静态分析的时候，遇到模块加载命令import，</p> <p>会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。</p> <p>因此，ESM 是动态引用，并且不会缓存值，模块里面的变量绑定其所在的模块。</p> <p>编译时加载: ESM 不是对象，而是通过 export 命令显式指定输出的代码，import时采用静态命令的形式。</p> <p>即在import时可以指定加载某个输出值，而不是加载整个模块，这种加载即所谓的“编译时加载”。</p> <p><strong>为什么说，Vite是一种新型的前端构建工具，而不称它为打包工具呢?</strong></p> <p><strong>构建工具和打包工具的区别?</strong></p> <ol><li>构建过程应该包括:预编译、语法检查、词法检查、依赖处理、文件合并、文件压缩、单元测试、版本管理等。</li> <li>打包工具更注重打包这一过程,主要包括依赖管理和版本管理等。</li></ol> <h2 id="_2-什么是构建工具"><a href="#_2-什么是构建工具" class="header-anchor">#</a> 2.什么是构建工具</h2> <p><img src="2023-03-24.assets/image-20230323085116471.png" alt="image-20230323085116471"></p> <p><strong>构建工具，主要做以下的工作</strong></p> <ol><li>代码转换：将TypeScript编译成JavaScript、将SCSS编译成CSS等。</li> <li>文件优化：压缩JavaScript、CSS、HTML代码，压缩合并图片等。</li> <li>代码分割：提取多个页面的公共代码，提取首屏不需要执行部分的代码让其异步加载。</li> <li>模块合并：在采用模块化的项目里会有很多个模块和文件，需要通过构建功能将模块分类合并成一个文件。</li> <li>自动刷新：监听本地源代码的变化，自动重新构建、刷新浏览器。</li> <li>代码校验：在代码被提交到仓库前需要校验代码是否符合规范，以及单元测试是否通过。</li> <li>自动发布：更新代码后，自动构建出线上发布代码并传输给发布系统。</li></ol> <p>比如我们执行一些例如CoffeeScript/ES6去代替Javascript. JS或CSS压缩、用Less去写CSS、用Jade去写HTML、用Browserify去模块化、 为非覆盖式部署的资源加MD5戳等,这些操作如果我们一遍遍手动执行，非常耗费时间和精力，所以前端构建工具，或者较前端自动化构建工具,<strong>就是用来让我们不再做机械重复的事情，解放我们的双手的</strong></p> <p><strong>总结：构建工具就是避免机械重复的事情，让其自动化完成</strong></p> <h2 id="_3-依赖预构建"><a href="#_3-依赖预构建" class="header-anchor">#</a> 3.依赖预构建</h2> <p>首次执行vite时，服务启动后会对node. modules模块和配置optimizeDeps的目标进行预构建</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  optimizeDeps<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token comment">//在预构建中强制排除某依赖项</span>
+    <span class="token comment">// exclude:['lodash-es']</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div><p><img src="2023-03-24.assets/image-20230323085724062.png" alt="image-20230323085724062"></p> <p>就是把那些第三方包自动加载到缓存里，引用的时候是使用esm方式引用</p> <p><a href="https://cn.vitejs.dev/guide/dep-pre-bundling.html" target="_blank" rel="noopener noreferrer">依赖预构建 | Vite 官方中文文档 (vitejs.dev)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="_4-开发服务器配置"><a href="#_4-开发服务器配置" class="header-anchor">#</a> 4.开发服务器配置</h2> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
+<span class="token keyword">import</span> basicSsl <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-basic-ssl'</span>
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">//使用tsl插件</span>
+    <span class="token function">basicSsl</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  optimizeDeps<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token comment">//在预构建中强制排除某依赖项</span>
+    <span class="token comment">// exclude:['lodash-es']</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">//开发服务器配置</span>
+  server<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token comment">//自动打开浏览器</span>
+    open<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">//开启https</span>
+    https<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+    port<span class="token operator">:</span><span class="token number">1234</span><span class="token punctuation">,</span>
+    <span class="token comment">//设置代理</span>
+    proxy<span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token string-property property">'/api'</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        target<span class="token operator">:</span><span class="token string">'https://www.bilibili.com/'</span><span class="token punctuation">,</span>
+        <span class="token comment">//允许跨域</span>
+        changeOrigin<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">rewrite</span><span class="token operator">:</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token operator">=&gt;</span>path<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/api</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div><h2 id="_5-环境变量"><a href="#_5-环境变量" class="header-anchor">#</a> 5.环境变量</h2> <p><a href="https://cn.vitejs.dev/guide/env-and-mode.html" target="_blank" rel="noopener noreferrer">环境变量和模式 | Vite 官方中文文档 (vitejs.dev)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>.env是全局环境文件</strong></p> <p><strong>.env.development</strong>开发环境文件</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">NODE_ENV</span><span class="token operator">=</span>development
+<span class="token assign-left variable">VITE_NAME</span><span class="token operator">=</span><span class="token string">'开发环境'</span>
+<span class="token assign-left variable">VITE_TITLE</span><span class="token operator">=</span><span class="token string">'vite dev'</span>
+<span class="token assign-left variable">VITE_BASE_URL</span><span class="token operator">=</span><span class="token string">'http://xxxxxx/api'</span>
+</code></pre></div><p><img src="2023-03-24.assets/image-20230323092216329.png" alt="image-20230323092216329"></p> <p><strong>.env.production生产环境文件</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">VITE_NAME</span><span class="token operator">=</span><span class="token string">'生产环境'</span>
+<span class="token assign-left variable">VITE_TITLE</span><span class="token operator">=</span><span class="token string">'vite production'</span>
+<span class="token assign-left variable">VITE_BASE_URL</span><span class="token operator">=</span><span class="token string">'http://yyyyyyy/api'</span>
+</code></pre></div><p><img src="2023-03-24.assets/image-20230323092502387.png" alt="image-20230323092502387"></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig<span class="token punctuation">,</span>loadEnv <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
+<span class="token keyword">import</span> basicSsl <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-basic-ssl'</span>
+<span class="token comment">//自定义配置</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span>mode<span class="token punctuation">,</span>command<span class="token punctuation">,</span>ssrBuild<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mode<span class="token punctuation">,</span>command<span class="token punctuation">,</span>ssrBuild<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> config<span class="token operator">=</span><span class="token function">loadEnv</span><span class="token punctuation">(</span>mode<span class="token punctuation">,</span><span class="token string">'./'</span><span class="token punctuation">)</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">//使用tsl插件</span>
+      <span class="token function">basicSsl</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    optimizeDeps<span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token comment">//在预构建中强制排除某依赖项</span>
+      <span class="token comment">// exclude:['lodash-es']</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//开发服务器配置</span>
+    server<span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token comment">//自动打开浏览器</span>
+      open<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">//开启https</span>
+      https<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+      port<span class="token operator">:</span><span class="token number">1234</span><span class="token punctuation">,</span>
+      <span class="token comment">//设置代理</span>
+      proxy<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token string-property property">'/api'</span><span class="token operator">:</span><span class="token punctuation">{</span>
+          target<span class="token operator">:</span><span class="token string">'https://www.bilibili.com/'</span><span class="token punctuation">,</span>
+          <span class="token comment">//允许跨域</span>
+          changeOrigin<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token function-variable function">rewrite</span><span class="token operator">:</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token operator">=&gt;</span>path<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/api</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="2023-03-24.assets/image-20230323161105669.png" alt="image-20230323161105669"></p> <p><a href="https://cn.vitejs.dev/guide/api-javascript.html#loadenv" target="_blank" rel="noopener noreferrer">JavaScript API | Vite 官方中文文档 (vitejs.dev)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>使用函数式写法，使用loadEnv加载环境变量对不同的环境进行配置</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig<span class="token punctuation">,</span>loadEnv <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
+<span class="token keyword">import</span> basicSsl <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-basic-ssl'</span>
+
+<span class="token comment">//自定义配置</span>
+<span class="token comment">//defineConfig接受一个函数，参数是一个对象包含mode，command,ssrBuild</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span>mode<span class="token punctuation">,</span>command<span class="token punctuation">,</span>ssrBuild<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token comment">/* console.log(mode,command,ssrBuild) */</span>
+
+  <span class="token comment">//获取当前环境变量</span>
+  <span class="token keyword">const</span> config<span class="token operator">=</span><span class="token function">loadEnv</span><span class="token punctuation">(</span>mode<span class="token punctuation">,</span><span class="token string">'./'</span><span class="token punctuation">)</span>
+  <span class="token comment">/* console.log(config) */</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">//使用tsl插件</span>
+      <span class="token function">basicSsl</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    optimizeDeps<span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token comment">//在预构建中强制排除某依赖项</span>
+      <span class="token comment">// exclude:['lodash-es']</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//开发服务器配置</span>
+    server<span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token comment">//自动打开浏览器</span>
+      open<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">//开启https</span>
+      https<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+      port<span class="token operator">:</span><span class="token number">1234</span><span class="token punctuation">,</span>
+      <span class="token comment">//设置代理</span>
+      proxy<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token string-property property">'/api'</span><span class="token operator">:</span><span class="token punctuation">{</span>
+          target<span class="token operator">:</span>config<span class="token punctuation">.</span><span class="token constant">VITE_TARGET</span><span class="token punctuation">,</span>
+          <span class="token comment">//允许跨域</span>
+          changeOrigin<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token function-variable function">rewrite</span><span class="token operator">:</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token operator">=&gt;</span>path<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/api</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="编写环境变量类型文件"><a href="#编写环境变量类型文件" class="header-anchor">#</a> 编写环境变量类型文件</h3> <p><strong>src/env.d.ts</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">/// &lt;reference types=&quot;vite/client&quot; /&gt;</span>
+<span class="token keyword">interface</span> <span class="token class-name">ImportMetaEnv</span><span class="token punctuation">{</span>
+    <span class="token keyword">readonly</span> <span class="token constant">VITE_NAME</span><span class="token operator">:</span><span class="token builtin">string</span>
+    <span class="token keyword">readonly</span> <span class="token constant">VITE_TITLE</span><span class="token operator">:</span><span class="token builtin">string</span>
+    <span class="token keyword">readonly</span> <span class="token constant">VITE_BASE_URL</span><span class="token operator">:</span><span class="token builtin">string</span>
+    <span class="token keyword">readonly</span> <span class="token constant">VITE_TARGET</span><span class="token operator">:</span><span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">ImportMeta</span><span class="token punctuation">{</span>
+    <span class="token keyword">readonly</span> env<span class="token operator">:</span>ImportMetaEnv
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="_6-postcss配置"><a href="#_6-postcss配置" class="header-anchor">#</a> 6.postCss配置</h2> <h3 id="_1-安装依赖"><a href="#_1-安装依赖" class="header-anchor">#</a> 1.安装依赖</h3> <div class="language- extra-class"><pre class="language-text"><code> pnpm add postcss-nested
+</code></pre></div><div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  css<span class="token operator">:</span><span class="token punctuation">{</span>
+    postcss<span class="token operator">:</span><span class="token punctuation">{</span>
+      plugins<span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token comment">//css嵌套书写插件</span>
+        <span class="token function">postcssNested</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>配置一般postcss插件</strong></p> <p><strong>如果需要使用less直接安装依赖即可，不用配置</strong></p> <h2 id="_7-vite路径别名"><a href="#_7-vite路径别名" class="header-anchor">#</a> 7.vite路径别名</h2> <p><a href="https://cn.vitejs.dev/config/shared-options.html#resolve-alias" target="_blank" rel="noopener noreferrer">共享配置 | Vite 官方中文文档 (vitejs.dev)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>当使用文件系统路径的别名时，请始终使用绝对路径。相对路径的别名值会原封不动地被使用，因此无法被正常解析。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  resolve<span class="token operator">:</span><span class="token punctuation">{</span>
+    alias<span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token string-property property">'@'</span><span class="token operator">:</span><span class="token string">'/src'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="_8-批量导入"><a href="#_8-批量导入" class="header-anchor">#</a> 8.批量导入</h2> <p><a href="https://cn.vitejs.dev/guide/features.html#glob-import" target="_blank" rel="noopener noreferrer">功能 | Vite 官方中文文档 (vitejs.dev)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">///&lt;reference types=&quot;vite/client&quot;/&gt;</span>
+<span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span>RouteRecordRaw<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">ImportMeta</span><span class="token punctuation">{</span>
+    routes<span class="token operator">:</span>RouteRecordRaw<span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> modules<span class="token operator">=</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span><span class="token function">glob</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'./src/views/**/*.vue'</span><span class="token punctuation">,</span><span class="token string">'!./src/views/user-manage/*.vue'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    eager<span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">formatPath</span><span class="token punctuation">(</span>url<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    url<span class="token operator">=</span><span class="token string">'/'</span><span class="token operator">+</span>url
+    <span class="token keyword">return</span> url<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'./src/views/'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'.vue'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">((?&lt;=\/)[A-Z])</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gm</span></span><span class="token punctuation">,</span><span class="token punctuation">(</span>sub<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> sub<span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">returnRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>RouteRecordRaw<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> res<span class="token operator">:</span>RouteRecordRaw<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>modules<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">let</span> route<span class="token operator">:</span>RouteRecordRaw<span class="token operator">=</span><span class="token punctuation">{</span>
+            path<span class="token operator">:</span><span class="token function">formatPath</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            component<span class="token operator">:</span>modules<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+        res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">returnRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="2023-03-24.assets/image-20230323191819663.png" alt="image-20230323191819663"></p> <p><strong>使用glob批量导入然后配置成路由格式</strong></p> <h2 id="_9-插件"><a href="#_9-插件" class="header-anchor">#</a> 9.插件</h2> <p><a href="https://cn.vitejs.dev/guide/api-plugin.html" target="_blank" rel="noopener noreferrer">插件 API | Vite 官方中文文档 (vitejs.dev)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>vite插件钩子加载顺序</strong></p> <p><img src="2023-03-24.assets/image-20230323194134458.png" alt="image-20230323194134458"></p> <p><strong>插件示例</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 显示在 warning 和 error 中，用于警告和错误展示</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;hooks-order&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">// 初始化hooks，只走一次。服务器启动时被调用</span>
+    <span class="token function">options</span><span class="token punctuation">(</span>opts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;options&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 启动时调用一次</span>
+    <span class="token comment">// vite （本地）服务启动时调用，在这个函数中可以访问 rollup 的配置</span>
+    <span class="token function">buildStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;buildStart&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// vite特有钩子，在解析 Vite 配置前调用。</span>
+    <span class="token comment">// 接收原始用户配置（命令行选项指定的会与配置文件合并）</span>
+    <span class="token comment">// 和一个描述配置环境的变量</span>
+    <span class="token function">config</span><span class="token punctuation">(</span>userConfig<span class="token punctuation">,</span> env<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;userConfig&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// Vite配置确认，在解析 Vite 配置后调用</span>
+    <span class="token function">configResolved</span><span class="token punctuation">(</span>resolvedCofnig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;configResolved&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 用于配置dev server，可以进行中间件操作</span>
+    <span class="token function">configureServer</span><span class="token punctuation">(</span>server<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;configureServer&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// server.app.use((req, res, next) =&gt; {</span>
+      <span class="token comment">// // custom handle request...</span>
+      <span class="token comment">// })</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 用于转换宿主页，接收当前的 HTML 字符串和转换上下文</span>
+    <span class="token function">transformIndexHtml</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;transformIndexHtml&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> html<span class="token punctuation">;</span>
+      <span class="token comment">// return html.replace(</span>
+      <span class="token comment">// /&lt;title&gt;(.*?)&lt;/title&gt;/,</span>
+      <span class="token comment">// `&lt;title&gt;Title replaced!&lt;/title&gt;`</span>
+      <span class="token comment">// )</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 通用钩子，创建自定义确认函数</span>
+    <span class="token function">resolveId</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// console.log(resolveId)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>source <span class="token operator">===</span> <span class="token string">&quot;virtual-module&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;resolvedId&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> source<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 创建自定义加载函数，可用于返回自定义的内容</span>
+    <span class="token function">load</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;load&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">===</span> <span class="token string">&quot;virtual-module&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">'export default &quot;This is virtual!&quot;'</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 可用于转换已加载的模块内容（转变源码为需要的代码）</span>
+    <span class="token function">transform</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;transform&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">===</span> <span class="token string">&quot;virtual-module&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> code<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="虚拟模块"><a href="#虚拟模块" class="header-anchor">#</a> 虚拟模块</h3> <p>虚拟模块是 Vite 沿用 Rollup 的虚拟模块，虚拟模块类似 alias 别名，</p> <p>但是模块的内容并非直接从磁盘中读取，而是编译时生成。</p> <p>虚拟模块是一种很实用的模式，使你可以对使用 ESM 语法的源文件传入一些编译时信息。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">myPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//项目中使用的虚拟模块名称</span>
+    <span class="token keyword">const</span> virtualModuleId <span class="token operator">=</span> <span class="token string">'virtual:my-module'</span>
+    <span class="token comment">//加上\0内部模块使用的名称</span>
+    <span class="token keyword">const</span> resolvedVirtualModuleId <span class="token operator">=</span> <span class="token string">'\0'</span> <span class="token operator">+</span> virtualModuleId
+  
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 必须的，将会在 warning 和 error 中显示</span>
+      name<span class="token operator">:</span> <span class="token string">'my-plugin'</span><span class="token punctuation">,</span> 
+      <span class="token comment">//在每个传入【模块请求】时被调用</span>
+      <span class="token comment">// 以下钩子会在每个传入模块请求时被调用</span>
+ 	  <span class="token comment">// 换言之，不请求虚拟模块，就不会触发 resolvedId()</span>
+ 
+ 	  <span class="token comment">// 可用于定义自定义的 id 路径解析器，</span>
+      <span class="token comment">// 比如可以拿到import foo from './foo.js'中的./foo.js，</span>
+      <span class="token comment">// 一般用来定位第三方依赖，找到对应的文件</span>
+      <span class="token comment">// 真实虚拟模块 ID 转换为内部虚拟模块 ID。</span>
+      <span class="token comment">//id为模块名，解析时调用，传递给下一个钩子的入参</span>
+      <span class="token function">resolveId</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">===</span> virtualModuleId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'resolveId'</span><span class="token punctuation">,</span>id<span class="token punctuation">)</span>
+            <span class="token comment">//返回id</span>
+          <span class="token keyword">return</span> resolvedVirtualModuleId
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">//模块加载时调用</span>
+ 	  <span class="token comment">// 在加载文件内容的钩子中返回这个虚拟模块的内容</span>
+      <span class="token function">load</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">===</span> resolvedVirtualModuleId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span>id<span class="token punctuation">)</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">export * as test from './test'</span><span class="token template-punctuation string">`</span></span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+</code></pre></div><p><strong>使用</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">//@ts-ignore</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>test<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'virtual:my-module'</span>
+</code></pre></div><h3 id="transform钩子"><a href="#transform钩子" class="header-anchor">#</a> transform钩子</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Plugin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vite&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>ops<span class="token operator">:</span> Record<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token punctuation">,</span> <span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">:</span> Plugin <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;vite-plugin-demo&quot;</span><span class="token punctuation">,</span>
+    <span class="token function">transform</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> id<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">//转换图片</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>id<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(.jpg|.png|.jpeg|.webp)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">export default &quot;/src/assets/2054179.jpg&quot;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">//处理css</span>
+      <span class="token comment">/* if(id.match(/(.css)$/gim)){
+                console.log(id)
+                //这里是css代码
+                console.log(code)
+                return code
+            } */</span>
+
+      <span class="token comment">//处理vue</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>id<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(Item.vue)$</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gim</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+                import {h, defineComponent} from &quot;vue&quot;;
+                const _sfcComp= defineComponent({
+                name: &quot;ItemVue22&quot;,
+                });
+                console.log( defineComponent )
+                // 对setup函数进行封装，返回options的对象；
+                // 最重要的是：在TypeScript下，给予了组件 
+                // 正确的参数类型推断 。
+                const _sfc_render =() =&gt; {
+                return h(&quot;div&quot;, {
+                innerHTML: '&lt;h1&gt;我是一个组件22222222&lt;/h1&gt;', 
+                })
+                };
+                _sfcComp.render = _sfc_render
+                export default _sfcComp
+                </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="load钩子"><a href="#load钩子" class="header-anchor">#</a> load钩子</h3> <p>浏览器发起请求以后，dev server 端会通过 middlewares 对请求做拦截，</p> <p>然后对源文件做 resolve、load、transform 等操作，</p> <p>然后再将转换以后的内容发送给浏览器。</p> <p>resolveId 就是去找到对应的文件，输出本地的实际的路径，</p> <p>load 输出是文件模块的代码字符串</p> <p>加载本地文件到内存中</p> <p>当然了你也可以在load里修改一下源码，</p> <p>然后再传入到 transform</p> <p>transform 就是将源码转变成目标代码</p> <p>在这里进一步对源码进行操作</p> <p>转换完成的内容直接返回给浏览器</p> <p>它处理的是模块</p> <p>【load 与 transform】：</p> <p><strong>共同点：</strong></p> <ul><li>是它们都能修改内容；</li></ul> <p><strong>区别是：</strong></p> <ul><li>load，它处理的是文件</li> <li>transform，它转换的是模块</li> <li>所以在load中，可以直接写，之类的代码</li> <li>但在 transform 中，就要通过h渲染函数</li></ul> <p>load(id)：</p> <p>在每个传入模块请求时被调用，可以自定义加载器，可用来返回自定义的内容</p> <p>输出是文件模块的代码字符串，默认就是直接读取文件内容并返回</p> <p>在解析模块时调用，也可以修改返回代码，来指定某个 import 语句加载特定的模块</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Plugin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vite&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>ops<span class="token operator">:</span> Record<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token punctuation">,</span> <span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">:</span> Plugin <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;vite-plugin-demo&quot;</span><span class="token punctuation">,</span>
+    
+    <span class="token function">load</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>id<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(Item.vue)$</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gim</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>options<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+            &lt;template&gt;
+                &lt;div&gt;
+                    我修改了组件
+                &lt;/div&gt;
+                &lt;AA/&gt;
+            &lt;/template&gt;
+            
+            &lt;script setup lang=&quot;ts&quot;&gt;
+            import AA from './aa.vue'
+            &lt;/script&gt;
+            
+            &lt;style scoped&gt;
+            
+            &lt;/style&gt;
+            </span><span class="token template-punctuation string">`</span></span>
+            
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="_9-插件实战"><a href="#_9-插件实战" class="header-anchor">#</a> 9.插件实战</h2> <h3 id="_1-md转vue插件"><a href="#_1-md转vue插件" class="header-anchor">#</a> 1.md转vue插件</h3> <p>目前多数博客提供的解决方案：</p> <ol><li>利用markdown的解析库将md解析成html内容</li> <li>在业务中编写一个组件，将前一步解析出的html文本作为v-html属性的值</li></ol> <p><strong>需求：将md文件直接导入成可使用的vue组件</strong></p> <h4 id="_1-安装依赖-2"><a href="#_1-安装依赖-2" class="header-anchor">#</a> 1.安装依赖</h4> <div class="language- extra-class"><pre class="language-text"><code>pnpm add marked
+</code></pre></div><h4 id="_2-实现"><a href="#_2-实现" class="header-anchor">#</a> 2.实现</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Plugin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>marked<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'marked'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>Plugin<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span><span class="token string">'vite-plugin-mdToVue'</span><span class="token punctuation">,</span>
+        <span class="token function">load</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">transform</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> id<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>id<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(.md)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+                <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">marked</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+                    import {h,defineComponent} from &quot;vue&quot;
+                    let _mdObj=defineComponent({
+                        name:&quot;mdItem&quot;
+                    })
+
+                    let md_render=()=&gt;{
+                        return h(&quot;div&quot;,{
+                            innerHTML:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token function">marked</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+                        })
+                    }
+
+                    _mdObj.render=md_render;
+                    export default _mdObj
+                </span><span class="token template-punctuation string">`</span></span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-自动生成vue-router路由"><a href="#_2-自动生成vue-router路由" class="header-anchor">#</a> 2.自动生成vue-router路由</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span>Plugin<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> fs <span class="token keyword">from</span> <span class="token string">'fs'</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+
+<span class="token keyword">function</span> <span class="token function">readFiles</span><span class="token punctuation">(</span>src<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> fileNames<span class="token operator">=</span>fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> res<span class="token operator">:</span><span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>path<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">}</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    fileNames<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>item<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> fileDir<span class="token operator">=</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">const</span> state<span class="token operator">=</span>fs<span class="token punctuation">.</span><span class="token function">statSync</span><span class="token punctuation">(</span>fileDir<span class="token punctuation">)</span>
+        <span class="token comment">//判断为是文件夹</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token function">readFiles</span><span class="token punctuation">(</span>fileDir<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">const</span> file<span class="token operator">=</span>path<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>fileDir<span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span>ext<span class="token operator">==</span><span class="token string">'.vue'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                    name<span class="token operator">:</span>file<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+                    path<span class="token operator">:</span>fileDir<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\\</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gim</span></span><span class="token punctuation">,</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">returnRoutes</span><span class="token punctuation">(</span>files<span class="token operator">:</span>ReturnType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> readFiles<span class="token operator">&gt;</span><span class="token punctuation">,</span>src<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> files<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>item<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> path<span class="token operator">=</span>item<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>src<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+        <span class="token keyword">const</span> root<span class="token operator">=</span>src<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'./src'</span><span class="token punctuation">,</span><span class="token string">'@'</span><span class="token punctuation">)</span>
+        <span class="token keyword">const</span> temp<span class="token operator">=</span>path<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(.vue)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gim</span></span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        temp<span class="token punctuation">[</span>temp<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">[</span>temp<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            name<span class="token operator">:</span>item<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+            path<span class="token operator">:</span>temp<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            component<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">()=&gt;import('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>root<span class="token operator">+</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">')</span><span class="token template-punctuation string">`</span></span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token operator">:</span>ReturnType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> returnRoutes<span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>key<span class="token operator">==</span><span class="token string">'component'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> value
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* console.log(formatPath(readFiles('./src/views'),'./src/views')[0].component()) */</span>
+<span class="token comment">/* console.log(formatPath(readFiles('./src/views'),'./src/views')) */</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>Plugin<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> virtualModuleId <span class="token operator">=</span> <span class="token string">'virtual:automated-routes'</span>
+    <span class="token keyword">const</span> resolvedVirtualModuleId <span class="token operator">=</span> <span class="token string">'\0'</span> <span class="token operator">+</span> virtualModuleId
+
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span><span class="token string">'vite-plugin-vue-router'</span><span class="token punctuation">,</span>
+        <span class="token function">resolveId</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span> importer<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>source <span class="token operator">===</span> virtualModuleId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> resolvedVirtualModuleId
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">load</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>id<span class="token operator">===</span>resolvedVirtualModuleId<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">export const routes=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token function">returnRoutes</span><span class="token punctuation">(</span><span class="token function">readFiles</span><span class="token punctuation">(</span><span class="token string">'./src/views'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'./src/views'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+                    export const parse=(str)=&gt;{
+                        try {
+                            return JSON.parse(str,(key,value)=&gt;{
+                                if(key=='component'){
+                                    return new Function(value)
+                                }else{
+                                    return value
+                                }
+                            })
+                        } catch (error) {
+                            console.error(error)
+                        }
+                    }
+                </span><span class="token template-punctuation string">`</span></span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>主要逻辑就是通过虚拟模块导出，但是返回的时候需要拼接好字符串</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">///&lt;reference types=&quot;vite/client&quot;/&gt;</span>
+<span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span>RouteRecordRaw<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">ImportMeta</span><span class="token punctuation">{</span>
+    routes<span class="token operator">:</span>RouteRecordRaw<span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> modules<span class="token operator">=</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span><span class="token function">glob</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'./src/views/**/*.vue'</span><span class="token punctuation">,</span><span class="token string">'!./src/views/user-manage/*.vue'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    eager<span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">formatPath</span><span class="token punctuation">(</span>url<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    url<span class="token operator">=</span><span class="token string">'/'</span><span class="token operator">+</span>url
+    <span class="token keyword">return</span> url<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'./src/views/'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'.vue'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">((?&lt;=\/)[A-Z])</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gm</span></span><span class="token punctuation">,</span><span class="token punctuation">(</span>sub<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> sub<span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">returnRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>RouteRecordRaw<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> res<span class="token operator">:</span>RouteRecordRaw<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>modules<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">let</span> route<span class="token operator">:</span>RouteRecordRaw<span class="token operator">=</span><span class="token punctuation">{</span>
+            path<span class="token operator">:</span><span class="token function">formatPath</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            component<span class="token operator">:</span>modules<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+        res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>使用vite的global批量导入，然后拼接组装成路由格式</strong></p> <h3 id="_3-控制台输出预览二维码"><a href="#_3-控制台输出预览二维码" class="header-anchor">#</a> 3.控制台输出预览二维码</h3> <p>做移动端网页的时候，需要在手机上预览页面</p> <p>一般的做法就是将dev服务的地址复制到手机上，再打开看</p> <p>步骤比较繁琐。</p> <p><strong>我们在控制台输出网址的二维码，手机扫码打开网页，提高效率</strong></p> <p><a href="https://www.npmjs.com/package/qrcode-terminal" target="_blank" rel="noopener noreferrer">qrcode-terminal - npm (npmjs.com)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h4 id="_1-安装依赖-3"><a href="#_1-安装依赖-3" class="header-anchor">#</a> 1.安装依赖</h4> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">pnpm</span> <span class="token function">add</span> qrcode-termina
+</code></pre></div><h4 id="_2-编写插件"><a href="#_2-编写插件" class="header-anchor">#</a> 2.编写插件</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Plugin<span class="token punctuation">,</span> ResolvedServerOptions<span class="token punctuation">,</span> ServerOptions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> qrCode <span class="token keyword">from</span> <span class="token string">'qrcode-terminal'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>Plugin<span class="token punctuation">{</span>
+    <span class="token keyword">let</span> serverConfig<span class="token operator">:</span>ServerOptions <span class="token operator">&amp;</span> ResolvedServerOptions
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span><span class="token string">'vite-plugin-qrCode'</span><span class="token punctuation">,</span>
+        <span class="token function">configResolved</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            serverConfig<span class="token operator">=</span>config<span class="token punctuation">.</span>server
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">configureServer</span><span class="token punctuation">(</span>server<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+                server<span class="token punctuation">.</span>middlewares<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span>res<span class="token punctuation">,</span>next<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+                    <span class="token keyword">let</span> <span class="token punctuation">{</span>host<span class="token punctuation">,</span>port<span class="token punctuation">}</span><span class="token operator">=</span>serverConfig
+                    <span class="token keyword">let</span> url<span class="token operator">=</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">http://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+                    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> host<span class="token operator">!==</span><span class="token string">'string'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                        url<span class="token operator">=</span><span class="token string">'http://10.44.18.71:5173/'</span>
+                    <span class="token punctuation">}</span>
+                    qrCode<span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span><span class="token punctuation">{</span>small<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+                    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="2023-03-24.assets/image-20230326110829917.png" alt="image-20230326110829917"></p> <h3 id="_4-vite-plugin-mooc"><a href="#_4-vite-plugin-mooc" class="header-anchor">#</a> 4.vite-plugin-mooc</h3> <p><a href="https://github.com/vbenjs/vite-plugin-mock/blob/main/README.zh_CN.md" target="_blank" rel="noopener noreferrer">中文文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="http://mockjs.com/examples.html#Random.email()" target="_blank" rel="noopener noreferrer">Mock.js (mockjs.com)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>实现其实就是本地启动了一个服务，然后进行一些数据和模拟请求的各个配置</strong></p> <h4 id="_1-安装依赖-4"><a href="#_1-安装依赖-4" class="header-anchor">#</a> 1.安装依赖</h4> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">pnpm</span> <span class="token function">add</span> vite-plugin-mock mockjs -D
+</code></pre></div><h4 id="_2-配置插件"><a href="#_2-配置插件" class="header-anchor">#</a> 2.配置插件</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>viteMockServe<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite-plugin-mock'</span>
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">viteMockServe</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">//mock文件夹的地址</span>
+      mockPath<span class="token operator">:</span><span class="token string">'./src/mock'</span><span class="token punctuation">,</span>
+      supportTs<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">//开发环境使用</span>
+      localEnabled<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">//生产环境禁用</span>
+      prodEnabled<span class="token operator">:</span><span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div><h4 id="_3-编写mock文件"><a href="#_3-编写mock文件" class="header-anchor">#</a> 3.编写mock文件</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> MockMethod <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vite-plugin-mock&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> mock <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;mockjs&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> _data <span class="token operator">=</span> <span class="token function">mock</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;mockData|10&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token comment">// 生成指定数据，随机生成1-4个指定字符串</span>
+      <span class="token string-property property">&quot;string|1-4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;学习&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">// 随机生成不定长度文本 word</span>
+      <span class="token builtin">string</span><span class="token operator">:</span> <span class="token string">&quot;@cword(3,10)&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">// 随机生成标题 title 和句子 sentence</span>
+      title<span class="token operator">:</span> <span class="token string">&quot;@ctitle(3,10)&quot;</span><span class="token punctuation">,</span>
+      sentence<span class="token operator">:</span> <span class="token string">&quot;@csentence(20,30)&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">// 生成段落文本 paragraph.句子和段落的区别：一个是逗号，一个是句号。</span>
+      paragraph<span class="token operator">:</span> <span class="token string">&quot;@cparagraph&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">// @name，生成中文，没有c则生成英文</span>
+      cnname<span class="token operator">:</span> <span class="token string">&quot;@name&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">// 随机生成1-100范围内的数字</span>
+      <span class="token string-property property">&quot;number|1-100&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token comment">// 生成增量id标识</span>
+      id<span class="token operator">:</span> <span class="token string">&quot;@increment()&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">// 随机生成身份证号码、人名、地址信息</span>
+      idCard<span class="token operator">:</span> <span class="token string">&quot;@id()&quot;</span><span class="token punctuation">,</span>
+      name<span class="token operator">:</span> <span class="token string">&quot;@cname()&quot;</span><span class="token punctuation">,</span>
+      address<span class="token operator">:</span> <span class="token string">&quot;@city(true)&quot;</span><span class="token punctuation">,</span> <span class="token comment">//加true显示省级和市级，没有则显示市级</span>
+      <span class="token comment">// 随机生成一张指定图片</span>
+      img_url<span class="token operator">:</span> <span class="token string">&quot;@image('25,25','#fff','#e35ef1','png','我是老尚')&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">//参数解释：图片宽高、背景颜色、文本颜色、图片类型、文本信息</span>
+      <span class="token comment">// 随机生成时间日期</span>
+      tile_date<span class="token operator">:</span> <span class="token string">&quot;@date(yyyy-MM-dd hh:mm:ss)&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">// 随机生成指定范围的数组信息，随机生成10-25份信息。</span>
+      <span class="token string-property property">&quot;list|10-25&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          idCard<span class="token operator">:</span> <span class="token string">&quot;@id()&quot;</span><span class="token punctuation">,</span>
+          name<span class="token operator">:</span> <span class="token string">&quot;@cname()&quot;</span><span class="token punctuation">,</span>
+          address<span class="token operator">:</span> <span class="token string">&quot;@city(true)&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&lt;</span>MockMethod<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    url<span class="token operator">:</span> <span class="token string">&quot;/mock/api&quot;</span><span class="token punctuation">,</span>
+    method<span class="token operator">:</span> <span class="token string">&quot;get&quot;</span><span class="token punctuation">,</span>
+    timeout<span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+    statusCode<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+    response<span class="token operator">:</span> <span class="token punctuation">{</span>
+      code<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      message<span class="token operator">:</span> <span class="token string">&quot;请求数据成功&quot;</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span> _data<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    url<span class="token operator">:</span> <span class="token string">&quot;/mock/api/user&quot;</span><span class="token punctuation">,</span>
+    method<span class="token operator">:</span> <span class="token string">&quot;post&quot;</span><span class="token punctuation">,</span>
+    timeout<span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">response</span><span class="token operator">:</span> <span class="token punctuation">(</span>opt<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token operator">...</span>opt<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><p><img src="2023-03-24.assets/image-20230326165249320.png" alt="image-20230326165249320"></p> <h4 id="mock优点"><a href="#mock优点" class="header-anchor">#</a> mock优点</h4> <ol><li>前后端分离，</li> <li>可随机生成大量的数据</li> <li>用法简单</li> <li>数据类型丰富</li> <li>可扩展数据类型</li> <li>在已有接口文档的情况下，我们可以直接按照接口文档来开发，将相应的字段写好，在接口完成 之后，只需要改变url地址即可。</li></ol> <h4 id="_4-原理"><a href="#_4-原理" class="header-anchor">#</a> 4.原理</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Connect<span class="token punctuation">,</span> Plugin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> mock <span class="token keyword">from</span> <span class="token string">'../../mock'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>Plugin<span class="token punctuation">{</span>
+    
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mock<span class="token punctuation">)</span>
+
+    <span class="token keyword">function</span> <span class="token function">getMockUrlFn</span><span class="token punctuation">(</span>req<span class="token operator">:</span>Connect<span class="token punctuation">.</span>IncomingMessage<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> data<span class="token operator">=</span>mock<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>item<span class="token operator">=&gt;</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>url<span class="token operator">===</span>req<span class="token punctuation">.</span>url <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>method<span class="token operator">?.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">===</span>item<span class="token punctuation">.</span>method<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> data
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span><span class="token string">'vite-plugin-mock'</span><span class="token punctuation">,</span>
+        <span class="token function">configureServer</span><span class="token punctuation">(</span>server<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            server<span class="token punctuation">.</span>middlewares<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span>res<span class="token punctuation">,</span>next<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+                <span class="token keyword">const</span> data<span class="token operator">=</span><span class="token function">getMockUrlFn</span><span class="token punctuation">(</span>req<span class="token punctuation">)</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">{</span>  
+                    res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">&quot;content-type&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;application/json&quot;</span><span class="token punctuation">)</span>
+                    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> data<span class="token punctuation">.</span>response<span class="token operator">==</span><span class="token string">'function'</span><span class="token operator">?</span>data<span class="token punctuation">.</span><span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>data<span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>请求数据</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/mock/api/user'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    method<span class="token operator">:</span><span class="token string">'post'</span><span class="token punctuation">,</span>
+    headers<span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token string-property property">'content-type'</span><span class="token operator">:</span><span class="token string">'application/json'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_5-拷贝文件"><a href="#_5-拷贝文件" class="header-anchor">#</a> 5.拷贝文件</h3> <p><strong>对博客项目进行自动化</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> fs <span class="token keyword">from</span> <span class="token string">'fs'</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+
+<span class="token comment">//源目录</span>
+<span class="token keyword">const</span> src<span class="token operator">=</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'./blogs'</span><span class="token punctuation">)</span>
+<span class="token comment">//目标目录</span>
+<span class="token keyword">const</span> dist<span class="token operator">=</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'./dist'</span><span class="token punctuation">)</span>
+
+<span class="token comment">//获取要复制的文件目录</span>
+<span class="token keyword">function</span> <span class="token function">recordDirs</span><span class="token punctuation">(</span>src<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>sign<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> res<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">const</span> dirs<span class="token operator">=</span>fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span>
+    dirs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>item<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> fileDir<span class="token operator">=</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">const</span> state<span class="token operator">=</span>fs<span class="token punctuation">.</span><span class="token function">statSync</span><span class="token punctuation">(</span>fileDir<span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>fileDir<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>sign<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fileDir<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token function">recordDirs</span><span class="token punctuation">(</span>fileDir<span class="token punctuation">,</span>sign<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
+
+<span class="token comment">//复制当前文件夹到指定目录</span>
+<span class="token keyword">function</span> <span class="token function">copyDir</span><span class="token punctuation">(</span>src<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>dist<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> dir<span class="token operator">=</span>dist<span class="token operator">+</span><span class="token string">'\\blogs'</span><span class="token operator">+</span>src<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'blogs'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">const</span> sourceFile<span class="token operator">=</span>fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>fs<span class="token punctuation">.</span><span class="token function">existsSync</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        fs<span class="token punctuation">.</span><span class="token function">mkdirSync</span><span class="token punctuation">(</span>dir<span class="token punctuation">,</span><span class="token punctuation">{</span>recursive<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    sourceFile<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>file<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> fileDir<span class="token operator">=</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span>file<span class="token punctuation">)</span>
+        <span class="token keyword">const</span> state<span class="token operator">=</span>fs<span class="token punctuation">.</span><span class="token function">statSync</span><span class="token punctuation">(</span>fileDir<span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//复制文件到指定目录</span>
+            fs<span class="token punctuation">.</span><span class="token function">copyFileSync</span><span class="token punctuation">(</span>fileDir<span class="token punctuation">,</span>dir<span class="token operator">+</span><span class="token string">'\\'</span><span class="token operator">+</span>file<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Options</span><span class="token punctuation">{</span>
+    src<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>
+    dist<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>
+    sign<span class="token operator">:</span><span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//执行复制</span>
+<span class="token keyword">function</span> <span class="token function">copy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>src<span class="token punctuation">,</span>sign<span class="token punctuation">,</span>dist<span class="token punctuation">}</span><span class="token operator">:</span>Options<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> dirs<span class="token operator">=</span><span class="token function">recordDirs</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span>sign<span class="token punctuation">)</span>
+    dirs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>dir<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">========开始拷贝文件夹：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>dir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">========</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+        <span class="token function">copyDir</span><span class="token punctuation">(</span>dir<span class="token punctuation">,</span>dist<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">----------执行完成----------</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">copy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    sign<span class="token operator">:</span><span class="token string">'.assets'</span><span class="token punctuation">,</span>
+    src<span class="token punctuation">,</span>
+    dist
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2023/3/30 17:18:33</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-2a01419c data-v-2a01419c><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-2a01419c><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-2a01419c></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-2a01419c></path></svg></div><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.696b7c8f.js" defer></script><script src="/assets/js/5.ba03b2d0.js" defer></script><script src="/assets/js/1.8dbbe507.js" defer></script><script src="/assets/js/62.570cf894.js" defer></script>
+  </body>
+</html>

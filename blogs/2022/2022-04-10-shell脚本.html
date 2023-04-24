@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>shell脚本幸福你我他 | 红尘散仙</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b0aae218897fa9d8a9f76e9a77e0b3c6";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+        </script>
+    <meta name="description" content="心软不是病，回头才致命">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e1a20b5e.css" as="style"><link rel="preload" href="/assets/js/app.696b7c8f.js" as="script"><link rel="preload" href="/assets/js/5.ba03b2d0.js" as="script"><link rel="preload" href="/assets/js/1.8dbbe507.js" as="script"><link rel="preload" href="/assets/js/19.f7b5c911.js" as="script"><link rel="prefetch" href="/assets/js/10.39c4e951.js"><link rel="prefetch" href="/assets/js/11.ddcceb21.js"><link rel="prefetch" href="/assets/js/12.8f9588c4.js"><link rel="prefetch" href="/assets/js/13.d0445c72.js"><link rel="prefetch" href="/assets/js/14.95abd326.js"><link rel="prefetch" href="/assets/js/15.fde7e788.js"><link rel="prefetch" href="/assets/js/16.0cd67085.js"><link rel="prefetch" href="/assets/js/17.0b085c4a.js"><link rel="prefetch" href="/assets/js/18.7f357ac0.js"><link rel="prefetch" href="/assets/js/20.7edabbfb.js"><link rel="prefetch" href="/assets/js/21.f69a9fcf.js"><link rel="prefetch" href="/assets/js/22.517eb2c3.js"><link rel="prefetch" href="/assets/js/23.330f93d4.js"><link rel="prefetch" href="/assets/js/24.22441a6c.js"><link rel="prefetch" href="/assets/js/25.f20b5e19.js"><link rel="prefetch" href="/assets/js/26.81578250.js"><link rel="prefetch" href="/assets/js/27.84619ce7.js"><link rel="prefetch" href="/assets/js/28.22271419.js"><link rel="prefetch" href="/assets/js/29.0fb8ae1d.js"><link rel="prefetch" href="/assets/js/3.09096582.js"><link rel="prefetch" href="/assets/js/30.c9080d5e.js"><link rel="prefetch" href="/assets/js/31.90a1362d.js"><link rel="prefetch" href="/assets/js/32.12fa5a30.js"><link rel="prefetch" href="/assets/js/33.5bd2b32a.js"><link rel="prefetch" href="/assets/js/34.2f22532f.js"><link rel="prefetch" href="/assets/js/35.e2d8a8e6.js"><link rel="prefetch" href="/assets/js/36.f742b295.js"><link rel="prefetch" href="/assets/js/37.67697b5f.js"><link rel="prefetch" href="/assets/js/38.f7102104.js"><link rel="prefetch" href="/assets/js/39.12cd1782.js"><link rel="prefetch" href="/assets/js/4.ff567da2.js"><link rel="prefetch" href="/assets/js/40.a6f8a7e2.js"><link rel="prefetch" href="/assets/js/41.07a09264.js"><link rel="prefetch" href="/assets/js/42.e4f6c352.js"><link rel="prefetch" href="/assets/js/43.b9519955.js"><link rel="prefetch" href="/assets/js/44.b3f0a197.js"><link rel="prefetch" href="/assets/js/45.8f7a28ea.js"><link rel="prefetch" href="/assets/js/46.08cc804d.js"><link rel="prefetch" href="/assets/js/47.40f1cd36.js"><link rel="prefetch" href="/assets/js/48.cb77e2e3.js"><link rel="prefetch" href="/assets/js/49.af5cf5e6.js"><link rel="prefetch" href="/assets/js/50.1120fed4.js"><link rel="prefetch" href="/assets/js/51.d7c96089.js"><link rel="prefetch" href="/assets/js/52.363cf06c.js"><link rel="prefetch" href="/assets/js/53.a72352fe.js"><link rel="prefetch" href="/assets/js/54.4df040e8.js"><link rel="prefetch" href="/assets/js/55.0120897a.js"><link rel="prefetch" href="/assets/js/56.0dc56fc2.js"><link rel="prefetch" href="/assets/js/57.db800e7b.js"><link rel="prefetch" href="/assets/js/58.f84c3064.js"><link rel="prefetch" href="/assets/js/59.f461979e.js"><link rel="prefetch" href="/assets/js/6.8f912b58.js"><link rel="prefetch" href="/assets/js/60.fec391d6.js"><link rel="prefetch" href="/assets/js/61.f58250e3.js"><link rel="prefetch" href="/assets/js/62.570cf894.js"><link rel="prefetch" href="/assets/js/63.5813b1f2.js"><link rel="prefetch" href="/assets/js/64.ab4ea21b.js"><link rel="prefetch" href="/assets/js/65.9f75cda7.js"><link rel="prefetch" href="/assets/js/66.d3042ded.js"><link rel="prefetch" href="/assets/js/7.7e002afc.js"><link rel="prefetch" href="/assets/js/8.2167831e.js"><link rel="prefetch" href="/assets/js/9.cae86134.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e1a20b5e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1db74182><div data-v-1db74182><div id="loader-wrapper" class="loading-wrapper" data-v-57c58703 data-v-1db74182 data-v-1db74182><div class="loader-main" data-v-57c58703><div data-v-57c58703></div><div data-v-57c58703></div><div data-v-57c58703></div><div data-v-57c58703></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-5cb9a64e data-v-1db74182 data-v-1db74182><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>红尘散仙</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>红尘散仙</span>
+            
+          <span data-v-5cb9a64e>2022 - </span>
+          2023
+        </a></span></div></div> <div class="hide" data-v-1db74182><div data-v-1db74182><div id="smart" class="wrapper-page" style="background-image:url(/homeImage/15.jpg);background-position-x:center;background-position-y:center;background-size:cover;background-repeat-x:no-repeat;background-repeat-y:no-repeat;" data-v-1db74182><header class="navbar" data-v-1db74182><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="红尘散仙" class="logo"> <span class="site-name">红尘散仙</span></a> <div class="links"><div id="dayNightSwitch" class="generalWrapper" data-v-32f44868><a class="click" data-v-32f44868><div class="onOff daySwitch" data-v-32f44868><div class="star star1" data-v-32f44868></div> <div class="star star2" data-v-32f44868></div> <div class="star star3" data-v-32f44868></div> <div class="star star4" data-v-32f44868></div> <div class="star star5" data-v-32f44868></div> <div class="star sky" data-v-32f44868></div> <div class="sunMoon" data-v-32f44868><div class="crater crater1" data-v-32f44868></div> <div class="crater crater2" data-v-32f44868></div> <div class="crater crater3" data-v-32f44868></div> <div class="cloud part1" data-v-32f44868></div> <div class="cloud part2" data-v-32f44868></div></div></div></a></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/练习项目/" class="nav-link"><i class="iconfont undefined"></i>
+  练习项目
+</a></li><li class="dropdown-item"><!----> <a href="/categories/浅浅探索/" class="nav-link"><i class="iconfont undefined"></i>
+  浅浅探索
+</a></li><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="iconfont undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试系列/" class="nav-link"><i class="iconfont undefined"></i>
+  面试系列
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1db74182></div> <aside class="sidebar" data-v-1db74182><div class="personal-info-wrapper" data-v-03833281 data-v-1db74182><img src="/avatar-top.png" alt="author-avatar" class="personal-img" data-v-03833281> <h3 class="name" data-v-03833281>
+    红尘散仙
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>52</h3> <h6 data-v-03833281>文章</h6></div> <div data-v-03833281><h3 data-v-03833281>38</h3> <h6 data-v-03833281>标签</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/练习项目/" class="nav-link"><i class="iconfont undefined"></i>
+  练习项目
+</a></li><li class="dropdown-item"><!----> <a href="/categories/浅浅探索/" class="nav-link"><i class="iconfont undefined"></i>
+  浅浅探索
+</a></li><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="iconfont undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试系列/" class="nav-link"><i class="iconfont undefined"></i>
+  面试系列
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-5cb9a64e data-v-1db74182><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>shell脚本幸福你我他</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>红尘散仙</span>
+            
+          <span data-v-5cb9a64e>2022 - </span>
+          2023
+        </a></span></div></div></div> <div data-v-1db74182><main class="page"><div class="page-title" style="display:none;"><h1 class="title">shell脚本幸福你我他</h1> <div class="page-info" data-v-0efa1f05><i class="iconfont reco-account" data-v-0efa1f05><span data-v-0efa1f05>红尘散仙</span></i> <i class="iconfont reco-date" data-v-0efa1f05><span data-v-0efa1f05>2022-04-10</span></i> <i class="iconfont reco-eye" data-v-0efa1f05><span id="/blogs/2022/2022-04-10-shell%E8%84%9A%E6%9C%AC.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-0efa1f05><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-0efa1f05><span class="tag-item" data-v-0efa1f05>Linux</span><span class="tag-item" data-v-0efa1f05>shell</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div class="custom-block tip"><p class="custom-block-title">介绍</p> <p>本文介绍自己开发shell脚本库（玩具项目）</p></div> <h1 id="shell脚本库"><a href="#shell脚本库" class="header-anchor">#</a> shell脚本库</h1> <h2 id="_1-创作背景"><a href="#_1-创作背景" class="header-anchor">#</a> 1.创作背景</h2> <p>近日吾学习了linux，感觉是个不错的体验，但在安装软件如mysql等不是很方便，没有Windows那样的傻瓜式安装，故写下这些脚本。</p> <p><a href="https://github.com/yexiyue/shell-scripts/blob/main/README.md" target="_blank" rel="noopener noreferrer">仓库地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="_2-不定时更新"><a href="#_2-不定时更新" class="header-anchor">#</a> 2.不定时更新</h2> <p>吾会在学习的过程中把一些常见的操作写成脚本，提高可复用性，人类最大的特点就是会创造和使用工具。忙活了几天，起早摸黑写了这些shell 脚本，希望大家喜欢，可以的话点个star吧。</p> <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b534d39451f4b31b7351ddf68bedb9b~tplv-k3u1fbpfcp-zoom-1.image" style="zoom:150%;"> <h2 id="_3-下面是我linux学习笔记"><a href="#_3-下面是我linux学习笔记" class="header-anchor">#</a> 3.下面是我linux学习笔记</h2> <p><a href="https://juejin.cn/post/7084768750758527007/" target="_blank" rel="noopener noreferrer">linux学习笔记 - 掘金 (juejin.cn)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="_4-脚本使用说明"><a href="#_4-脚本使用说明" class="header-anchor">#</a> 4.脚本使用说明</h2> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f66b0aeaff09437cb7c091c9fbcbf9d0~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220410130956349"></p> <p>src下面存放的两个目录是脚本文件所在位置</p> <p><strong>config-scripts目录</strong></p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#./src/config-scripts/</span>
+change_yum_source.sh <span class="token comment">#更换yum源脚本</span>
+disable_selinux.sh <span class="token comment">#更改默认安装限制脚本</span>
+git_config.sh <span class="token comment">#git常用配置如ssh配置</span>
+static_ip_cfg.sh <span class="token comment">#主要是提供给本地虚拟机配置静态IP</span>
+update_date.sh <span class="token comment">#时间更新脚本</span>
+</code></pre></div><p><strong>install-scripts目录</strong></p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#./src/install-scripts/</span>
+git_install.sh <span class="token comment">#编译安装git脚本</span>
+install_commonly_page.sh <span class="token comment">#安装一些常用的包</span>
+nginx_install.sh <span class="token comment">#nginx安装脚本</span>
+node_install.sh <span class="token comment">#node安装脚本</span>
+</code></pre></div><h3 id="注意"><a href="#注意" class="header-anchor">#</a> <strong>注意：</strong></h3> <p><strong>以上的文件里面我写的都是函数</strong></p> <p><strong>直接运行单个文件没有效果</strong></p> <h3 id="注意-2"><a href="#注意-2" class="header-anchor">#</a> <strong>注意：</strong></h3> <p><strong>可能刚下载的文件上传到linux上格式会不对</strong></p> <p><strong>这时需要vim每个脚本文件</strong></p> <p><strong>:set fileformat=unix</strong></p> <p>这样就能执行了</p> <h3 id="注意-3"><a href="#注意-3" class="header-anchor">#</a> <strong>注意：</strong></h3> <p><strong>在使用git_config配置模块时要单独使用</strong></p> <p><strong>先输入</strong></p> <p><strong>ssh-agent  bash</strong></p> <p><strong>再</strong></p> <p><strong>sh init.sh</strong></p> <h3 id="init-sh入口文件"><a href="#init-sh入口文件" class="header-anchor">#</a> init.sh入口文件</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#! /bin/bash</span>
+<span class="token comment">#导入静态IP配置模块</span>
+<span class="token builtin class-name">.</span> ./src/config-scripts/static_ip_cfg.sh
+<span class="token comment"># staticIpCfg</span>
+
+<span class="token comment">#导入更换yum源模块</span>
+<span class="token builtin class-name">.</span> ./src/config-scripts/change_yum_source.sh
+<span class="token comment"># changeYumSource</span>
+
+<span class="token comment">#导入常用包安装模块</span>
+<span class="token builtin class-name">.</span> ./src/install-scripts/install_commonly_page.sh
+<span class="token comment"># installCommonlyPage</span>
+
+<span class="token comment">#导入更新时间模块</span>
+<span class="token builtin class-name">.</span> ./src/config-scripts/update_date.sh
+<span class="token comment"># updateDate</span>
+
+<span class="token comment">#导入更改软件安装限制</span>
+<span class="token builtin class-name">.</span> ./src/config-scripts/disable_selinux.sh
+<span class="token comment"># disableSelinux</span>
+
+<span class="token comment">#导入node安装模块</span>
+<span class="token builtin class-name">.</span> ./src/install-scripts/node_install.sh
+<span class="token comment"># nodeInstall</span>
+
+<span class="token comment">#导入nginx安装模块</span>
+<span class="token builtin class-name">.</span> ./src/install-scripts/nginx_install.sh
+<span class="token comment"># nginxInstall</span>
+
+<span class="token comment">#导入git安装模块</span>
+<span class="token builtin class-name">.</span> ./src/install-scripts/git_install.sh
+<span class="token comment"># gitInstall</span>
+
+<span class="token comment">#导入git配置模块</span>
+<span class="token builtin class-name">.</span> ./src/config-scripts/git_config.sh
+<span class="token comment">#girConfig</span>
+</code></pre></div><h3 id="如何使用"><a href="#如何使用" class="header-anchor">#</a> 如何使用</h3> <ol><li><strong>把文件下载到linux上面</strong></li> <li><strong>修改init.sh</strong></li> <li><strong>选择你想要的如何解开注释</strong></li> <li><strong>cd shell-scripts</strong></li> <li><strong>sh init.sh</strong></li></ol> <h3 id="使用截图"><a href="#使用截图" class="header-anchor">#</a> 使用截图</h3> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c2c7045053b847928d34778a95d99eb8~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220410132425866"></p> <p>安装的时候要求输入链接</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/85539fe6dbbd470b82b6ad9d84bfe544~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220410132339225"></p> <p>找到二进制文件右键复制链接</p> <p>如何把链接输入进终端就行了</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0150a3c47f4e465e91e0ed6643085bc3~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220410132605335"></p> <p>并且会自动配置环境变量</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b2714a5eaa4e40749691bf15feee50b5~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220410132639213"></p> <h3 id="_5-说明"><a href="#_5-说明" class="header-anchor">#</a> 5.说明</h3> <p>关于mysql及其他相关的脚本，吾正在努力编写中</p> <h3 id="_6-原理"><a href="#_6-原理" class="header-anchor">#</a> 6.原理</h3> <p><strong>不过是一些命令的巧妙组合，和一些复杂的安装配置步骤结合而成</strong></p> <p>下面放上<strong>git_install.sh</strong>源码和<strong>git_config.sh</strong>源码做示例</p> <p>一些内容我放到linux笔记里的</p> <p><a href="https://juejin.cn/post/7084768750758527007" target="_blank" rel="noopener noreferrer">linux学习笔记 - 掘金 (juejin.cn)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token keyword">function</span> <span class="token function-name function">gitInstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token comment">#安装git</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;5;34m==========开始安装git==========<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;35m请输入git链接地址(输入abc表示默认使用默认的版本安装)<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token builtin class-name">read</span> gitaddr
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$gitadd</span> -eq <span class="token string">&quot;abc&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">then</span> 
+<span class="token assign-left variable">gitaddr</span><span class="token operator">=</span><span class="token string">'https://github.com/git/git/archive/refs/tags/v2.34.1.tar.gz'</span>
+<span class="token keyword">fi</span>
+<span class="token function">wget</span> -O ~/git.tar.gz <span class="token variable">$gitaddr</span>
+<span class="token function">mkdir</span> ~/git
+<span class="token function">tar</span> -xvf ~/git.tar.gz -C ~/git --strip-components <span class="token number">1</span>
+<span class="token comment">#安装依赖</span>
+yum <span class="token function">install</span> curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker -y
+<span class="token comment">#编译</span>
+<span class="token builtin class-name">cd</span> ~/git
+<span class="token function">make</span> <span class="token assign-left variable">prefix</span><span class="token operator">=</span>/usr/local/git all
+<span class="token comment">#安装</span>
+<span class="token function">make</span> <span class="token assign-left variable">prefix</span><span class="token operator">=</span>/usr/local/git <span class="token function">install</span>
+<span class="token comment">#配置环境变量</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'export GIT_HOME=/usr/local/git/bin'</span> <span class="token operator">&gt;&gt;</span>/etc/profile
+<span class="token builtin class-name">echo</span> <span class="token string">'export PATH=$GIT_HTME:$PATH'</span> <span class="token operator">&gt;&gt;</span> /etc/profile
+<span class="token comment">#重新加载资源</span>
+<span class="token builtin class-name">source</span> /etc/profile
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;5;32m==========git安装成功==========<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token function">git</span> --version
+<span class="token function">rm</span> -rf ~/git.tar.gz ~/git
+<span class="token punctuation">}</span>
+</code></pre></div><p>为了整这个git ssh配置劳累了一上午，特别是两主机间验证这个步骤必须要先</p> <p><code>ssh-agent bash</code></p> <p><strong>但是键入ssh-agent bash命令会导致脚本直接退出</strong></p> <p>所以使用者先手动输入一下<code>ssh-agent bash</code></p> <p>再执行脚本</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token keyword">function</span> <span class="token function-name function">gitConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;5;34m=========开始配置git==========<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token keyword">function</span> <span class="token function-name function">testGit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">ssh</span> -v git@github.com
+ssh-agent -s
+<span class="token punctuation">}</span>
+
+<span class="token assign-left variable">userName</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">git</span> config  user.name<span class="token variable">`</span></span>
+<span class="token assign-left variable">userEmail</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">git</span> config  user.email<span class="token variable">`</span></span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">${<span class="token operator">#</span>userName}</span> -eq <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;35m请输入用户名<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token builtin class-name">read</span> name
+<span class="token function">git</span> config user.name <span class="token variable">$name</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">${<span class="token operator">#</span>userEmail}</span> -eq <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;35m请输入邮箱<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token builtin class-name">read</span> email
+<span class="token function">git</span> config  user.email <span class="token variable">$email</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;35m其他默认配置如避免乱码<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token function">git</span> config --global core.autocrlf <span class="token boolean">false</span>
+<span class="token function">git</span> config --global core.quotepath off
+<span class="token function">git</span> config --global gui.encoding utf-8
+
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;5;32m==========配置完成=========<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token function">git</span> config --list
+
+<span class="token assign-left variable">userName</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">git</span> config  user.name<span class="token variable">`</span></span>
+<span class="token assign-left variable">userEmail</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">git</span> config  user.email<span class="token variable">`</span></span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$userName</span> <span class="token variable">$userEmail</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;5;34m是否要生成ssh keys可能会覆盖之前的请谨慎操作<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token keyword">select</span> <span class="token for-or-select variable">check</span> <span class="token keyword">in</span> <span class="token string">&quot;是&quot;</span> <span class="token string">&quot;否&quot;</span>
+<span class="token keyword">do</span>
+  <span class="token keyword">case</span> <span class="token variable">$check</span> <span class="token keyword">in</span>
+     <span class="token string">&quot;否&quot;</span><span class="token punctuation">)</span>
+        <span class="token builtin class-name">exit</span>
+        <span class="token builtin class-name">break</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+     <span class="token string">&quot;是&quot;</span><span class="token punctuation">)</span>
+        <span class="token function">mkdir</span> -p ~/.ssh/<span class="token variable">$userName</span>
+        ssh-keygen -t rsa -C <span class="token variable">$userEmail</span> -f ~/.ssh/<span class="token variable">$userName</span>/ssh_rsa
+        <span class="token builtin class-name">break</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token keyword">esac</span>
+<span class="token keyword">done</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;5;32m密钥生成成功请复制到github上或者在~/.ssh/<span class="token variable">$userName</span>/ssh_rsa.pub下复制<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token function">cat</span> ~/.ssh/<span class="token variable">$userName</span>/ssh_rsa.pub
+
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;35m复制完成请输入yes<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token builtin class-name">read</span> istrue
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$istrue</span> -eq <span class="token string">&quot;yes&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+   <span class="token builtin class-name">echo</span> -e  <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;4;34m开始验证服务<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+   testGit
+   ssh-add ~/.ssh/<span class="token variable">$userName</span>/ssh_rsa
+   <span class="token function">ssh</span> -T git@github.com
+   <span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;5;32m如果最后输出的内容出现successly则成功<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+<span class="token keyword">else</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[1;5;31m配置失败&quot;</span>
+<span class="token keyword">fi</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_5-希望"><a href="#_5-希望" class="header-anchor">#</a> 5.希望</h2> <p><strong>希望广大社区linux爱好者和我一起编写一些shell脚本，幸福你我他</strong></p> <p><strong>再也不用为安装和配置而烦恼</strong></p> <p><strong>另外点赞是对我最好的鼓励，谢谢大家</strong></p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022/6/15 09:07:34</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-2a01419c data-v-2a01419c><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-2a01419c><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-2a01419c></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-2a01419c></path></svg></div><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.696b7c8f.js" defer></script><script src="/assets/js/5.ba03b2d0.js" defer></script><script src="/assets/js/1.8dbbe507.js" defer></script><script src="/assets/js/19.f7b5c911.js" defer></script>
+  </body>
+</html>
