@@ -2,7 +2,7 @@ module.exports = {
   //网站标题（博客名称）
   "title": "红尘散仙",
   //加载页面的提示语句
-  "description": "心软不是病，回头才致命",
+  "description": "男儿不展凌云志，空负天生八尺躯",
   "dest": "dist",
   "head": [
     /* [
@@ -106,31 +106,31 @@ module.exports = {
     //首页文案，可以自己更换每天会自动显示一段
     "mottos": [
     {
-      "zh": "天在下雨地下滑，自己跌倒自己爬。",
-      "en": "It was raining and I slipped. I fell and climbed."
+      "zh": "待到他日鹰展翅，我必化龙啸九天",
+      "en": ""
     },
     {
-      "zh": "花有百般红，人与狗不同。",
-      "en": "Flowers are all kinds of red. People are different from dogs."
+      "zh": "皇图霸业谈笑中，不胜人生一场醉",
+      "en": ""
     },
     {
-      "zh": "只因人在风中，聚散不由你我。",
-      "en": "Just because people gather and disperse in the wind, it's up to you and me."
+      "zh": "满堂花醉三千客，一剑霜寒十四州",
+      "en": ""
     },
     {
-      "zh": "学过很多技能，到头来才发现，最有用的技能是——看开点。",
-      "en": "After learning many skills, I finally found that the most useful skill is to be open-minded."
+      "zh": "海到尽头天做岸，山登绝顶我为峰",
+      "en": ""
     },
     {
-      "zh": "好好享受生活吧，未来若干年后你会很怀念过去的美好时光。。",
-      "en": "Enjoy yourself. These are the good old days you're going to miss in the years ahead. "
+      "zh": "十有九输天下事，百无一可意中人",
+      "en": " "
     }, {
-      "zh": "打雷天站在雨里头，有点儿不讲究！",
-      "en": "It's a bit careless to stand in the rain on a thundering day."
+      "zh": "墙上画马不能骑，纸上画饼不充饥",
+      "en": ""
     },
     {
-      "zh": "我就是想站着，还把钱挣了。",
-      "en": "I just want to stand and earn money."
+      "zh": "他日若遂凌云志，敢笑黄巢不丈夫",
+      "en": ""
     }
     ],
     //配置背景图片，每次刷新自动
