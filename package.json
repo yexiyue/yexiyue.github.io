@@ -4,7 +4,7 @@
   "author": "zeal",
   "scripts": {
     "dev": "vuepress dev .",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress build . && esno copy.ts"
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress build . && node copy.mjs"
   },
   "devDependencies": {
     "glob": "^7.1.6",
