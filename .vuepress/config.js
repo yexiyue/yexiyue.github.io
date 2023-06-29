@@ -3,7 +3,7 @@ module.exports = {
   "title": "红尘散仙",
   //加载页面的提示语句
   "description": "男儿不展凌云志，空负天生八尺躯",
-  "dest": "dist",
+  "dest": "docs",
   "head": [
     /* [
       "link",

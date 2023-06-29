@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>koa源码学习 | 红尘散仙</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b0aae218897fa9d8a9f76e9a77e0b3c6";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+        </script>
+    <meta name="description" content="男儿不展凌云志，空负天生八尺躯">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e1a20b5e.css" as="style"><link rel="preload" href="/assets/js/app.6ddb7ced.js" as="script"><link rel="preload" href="/assets/js/5.ba03b2d0.js" as="script"><link rel="preload" href="/assets/js/1.8dbbe507.js" as="script"><link rel="preload" href="/assets/js/36.2faeae6a.js" as="script"><link rel="prefetch" href="/assets/js/10.39c4e951.js"><link rel="prefetch" href="/assets/js/11.b9124fdf.js"><link rel="prefetch" href="/assets/js/12.8f9588c4.js"><link rel="prefetch" href="/assets/js/13.dac224cb.js"><link rel="prefetch" href="/assets/js/14.5087963d.js"><link rel="prefetch" href="/assets/js/15.f5895509.js"><link rel="prefetch" href="/assets/js/16.07e66dc8.js"><link rel="prefetch" href="/assets/js/17.f619d887.js"><link rel="prefetch" href="/assets/js/18.1e7e2d25.js"><link rel="prefetch" href="/assets/js/19.6e4fe407.js"><link rel="prefetch" href="/assets/js/20.e5f1052d.js"><link rel="prefetch" href="/assets/js/21.527e663e.js"><link rel="prefetch" href="/assets/js/22.e4296a94.js"><link rel="prefetch" href="/assets/js/23.652f17a7.js"><link rel="prefetch" href="/assets/js/24.5faff855.js"><link rel="prefetch" href="/assets/js/25.f20b5e19.js"><link rel="prefetch" href="/assets/js/26.9829ea03.js"><link rel="prefetch" href="/assets/js/27.79b9cf42.js"><link rel="prefetch" href="/assets/js/28.2dfbb7db.js"><link rel="prefetch" href="/assets/js/29.0fb8ae1d.js"><link rel="prefetch" href="/assets/js/3.09096582.js"><link rel="prefetch" href="/assets/js/30.0c62c29a.js"><link rel="prefetch" href="/assets/js/31.14f188f2.js"><link rel="prefetch" href="/assets/js/32.c334a917.js"><link rel="prefetch" href="/assets/js/33.2a9f11ad.js"><link rel="prefetch" href="/assets/js/34.24a8d1c0.js"><link rel="prefetch" href="/assets/js/35.e3460fd0.js"><link rel="prefetch" href="/assets/js/37.eed6421f.js"><link rel="prefetch" href="/assets/js/38.9a13ad95.js"><link rel="prefetch" href="/assets/js/39.12cd1782.js"><link rel="prefetch" href="/assets/js/4.ff567da2.js"><link rel="prefetch" href="/assets/js/40.1082668c.js"><link rel="prefetch" href="/assets/js/41.e15829b3.js"><link rel="prefetch" href="/assets/js/42.1085ee40.js"><link rel="prefetch" href="/assets/js/43.b9519955.js"><link rel="prefetch" href="/assets/js/44.1b806956.js"><link rel="prefetch" href="/assets/js/45.f47913ef.js"><link rel="prefetch" href="/assets/js/46.d0c357fa.js"><link rel="prefetch" href="/assets/js/47.6cf3af5f.js"><link rel="prefetch" href="/assets/js/48.da822814.js"><link rel="prefetch" href="/assets/js/49.a6a04d9c.js"><link rel="prefetch" href="/assets/js/50.474de197.js"><link rel="prefetch" href="/assets/js/51.4f6f328f.js"><link rel="prefetch" href="/assets/js/52.28b0baa7.js"><link rel="prefetch" href="/assets/js/53.e98fe6d0.js"><link rel="prefetch" href="/assets/js/54.f06b6859.js"><link rel="prefetch" href="/assets/js/55.f3713824.js"><link rel="prefetch" href="/assets/js/56.bda22d5e.js"><link rel="prefetch" href="/assets/js/57.4a74857d.js"><link rel="prefetch" href="/assets/js/58.4f91edd3.js"><link rel="prefetch" href="/assets/js/59.8c7fdb7f.js"><link rel="prefetch" href="/assets/js/6.8f912b58.js"><link rel="prefetch" href="/assets/js/60.2999b5d5.js"><link rel="prefetch" href="/assets/js/61.32767f94.js"><link rel="prefetch" href="/assets/js/62.540db921.js"><link rel="prefetch" href="/assets/js/63.7d3543bb.js"><link rel="prefetch" href="/assets/js/64.827bbcb4.js"><link rel="prefetch" href="/assets/js/65.9ea046c3.js"><link rel="prefetch" href="/assets/js/66.c7df1b75.js"><link rel="prefetch" href="/assets/js/67.823e4955.js"><link rel="prefetch" href="/assets/js/68.df1a7f16.js"><link rel="prefetch" href="/assets/js/69.eedd2d15.js"><link rel="prefetch" href="/assets/js/7.7e002afc.js"><link rel="prefetch" href="/assets/js/70.6c63ba36.js"><link rel="prefetch" href="/assets/js/71.1a106d5c.js"><link rel="prefetch" href="/assets/js/72.7053674f.js"><link rel="prefetch" href="/assets/js/73.3e4b6fd8.js"><link rel="prefetch" href="/assets/js/74.22dedb1f.js"><link rel="prefetch" href="/assets/js/75.9ee98721.js"><link rel="prefetch" href="/assets/js/8.2167831e.js"><link rel="prefetch" href="/assets/js/9.cae86134.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e1a20b5e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1db74182><div data-v-1db74182><div id="loader-wrapper" class="loading-wrapper" data-v-57c58703 data-v-1db74182 data-v-1db74182><div class="loader-main" data-v-57c58703><div data-v-57c58703></div><div data-v-57c58703></div><div data-v-57c58703></div><div data-v-57c58703></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-5cb9a64e data-v-1db74182 data-v-1db74182><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>红尘散仙</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>红尘散仙</span>
+            
+          <span data-v-5cb9a64e>2022 - </span>
+          2023
+        </a></span></div></div> <div class="hide" data-v-1db74182><div data-v-1db74182><div id="smart" class="wrapper-page" style="background-image:url(/homeImage/16.jpg);background-position-x:center;background-position-y:center;background-size:cover;background-repeat-x:no-repeat;background-repeat-y:no-repeat;" data-v-1db74182><header class="navbar" data-v-1db74182><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="红尘散仙" class="logo"> <span class="site-name">红尘散仙</span></a> <div class="links"><div id="dayNightSwitch" class="generalWrapper" data-v-32f44868><a class="click" data-v-32f44868><div class="onOff daySwitch" data-v-32f44868><div class="star star1" data-v-32f44868></div> <div class="star star2" data-v-32f44868></div> <div class="star star3" data-v-32f44868></div> <div class="star star4" data-v-32f44868></div> <div class="star star5" data-v-32f44868></div> <div class="star sky" data-v-32f44868></div> <div class="sunMoon" data-v-32f44868><div class="crater crater1" data-v-32f44868></div> <div class="crater crater2" data-v-32f44868></div> <div class="crater crater3" data-v-32f44868></div> <div class="cloud part1" data-v-32f44868></div> <div class="cloud part2" data-v-32f44868></div></div></div></a></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/练习项目/" class="nav-link"><i class="iconfont undefined"></i>
+  练习项目
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/浅浅探索/" class="nav-link"><i class="iconfont undefined"></i>
+  浅浅探索
+</a></li><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="iconfont undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试系列/" class="nav-link"><i class="iconfont undefined"></i>
+  面试系列
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1db74182></div> <aside class="sidebar" data-v-1db74182><div class="personal-info-wrapper" data-v-03833281 data-v-1db74182><img src="/avatar-top.png" alt="author-avatar" class="personal-img" data-v-03833281> <h3 class="name" data-v-03833281>
+    红尘散仙
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>60</h3> <h6 data-v-03833281>文章</h6></div> <div data-v-03833281><h3 data-v-03833281>44</h3> <h6 data-v-03833281>标签</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/练习项目/" class="nav-link"><i class="iconfont undefined"></i>
+  练习项目
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/浅浅探索/" class="nav-link"><i class="iconfont undefined"></i>
+  浅浅探索
+</a></li><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="iconfont undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试系列/" class="nav-link"><i class="iconfont undefined"></i>
+  面试系列
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-5cb9a64e data-v-1db74182><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>koa源码学习</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>红尘散仙</span>
+            
+          <span data-v-5cb9a64e>2022 - </span>
+          2023
+        </a></span></div></div></div> <div data-v-1db74182><main class="page"><div class="page-title" style="display:none;"><h1 class="title">koa源码学习</h1> <div class="page-info" data-v-0efa1f05><i class="iconfont reco-account" data-v-0efa1f05><span data-v-0efa1f05>红尘散仙</span></i> <i class="iconfont reco-date" data-v-0efa1f05><span data-v-0efa1f05>2022-07-13</span></i> <i class="iconfont reco-eye" data-v-0efa1f05><span id="/blogs/2022/2022-07-13.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-0efa1f05><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-0efa1f05><span class="tag-item" data-v-0efa1f05>koa</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div class="custom-block tip"><p class="custom-block-title">介绍</p> <p>koa 源码学习，手写 koa 核心</p></div> <h1 id="koa-源码学习"><a href="#koa-源码学习" class="header-anchor">#</a> koa 源码学习</h1> <p><strong>koa 默认就是对我们的 node 原生的 http 服务进行了封装</strong></p> <h2 id="_1-目录结构"><a href="#_1-目录结构" class="header-anchor">#</a> 1.目录结构</h2> <p><img src="https://s2.loli.net/2022/07/13/knWR7tsQOiV5rje.png" alt="image-20220713104612332"></p> <p><strong>application.js 整个的应用</strong></p> <p><strong>context.js 代表的是上下文</strong></p> <p><strong>request.js 用于扩展请求的</strong></p> <p><strong>response.js 用于扩展响应的</strong></p> <h2 id="_2-核心"><a href="#_2-核心" class="header-anchor">#</a> 2.核心</h2> <p><strong>koa 的核心</strong></p> <ol><li><strong>封装了 ctx</strong></li> <li><strong>提供了一个中间件处理流程</strong></li> <li><strong>提供了更好的错误处理</strong></li></ol> <h3 id="_1-封装了-ctx"><a href="#_1-封装了-ctx" class="header-anchor">#</a> 1.封装了 ctx</h3> <p>原生的 http 服务会有两个参数，req 和 res，为了封装 ctx 得先分别对 req 和 res 进行扩展</p> <p>context.js、request.js、response.js 三个文件相辅相成</p> <p><strong>request.js 文件</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> url <span class="token keyword">from</span> <span class="token string">'url'</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> request<span class="token operator">:</span> Record<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token punctuation">,</span> <span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token keyword">get</span> <span class="token function">path</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> pathname <span class="token punctuation">}</span> <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> pathname
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">get</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+    <span class="token comment">//这就是为什么在request身上加上一个req属性，为了在取值的时候可以快速获取到原生的req</span>
+    <span class="token comment">//为啥使用原型链方式，因为可以通过这很方便的拿到this，谁调用this就是谁</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>req<span class="token punctuation">.</span>url
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">get</span> <span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> query <span class="token punctuation">}</span> <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>req<span class="token punctuation">.</span>url<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> query
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>response.js</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">export</span> <span class="token keyword">const</span> response<span class="token operator">:</span> Record<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token punctuation">,</span> <span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  _body<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+  <span class="token keyword">get</span> <span class="token function">body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_body
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">set</span> <span class="token function">body</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>res<span class="token punctuation">.</span>statusCode <span class="token operator">=</span> <span class="token number">200</span>
+    <span class="token comment">/* console.log(this.res.statusCode) */</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_body <span class="token operator">=</span> newValue
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>context.js</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">//源码中koa用的过时的api，但兼容性很好</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> ctx <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">//封装一个函数</span>
+<span class="token keyword">function</span> <span class="token function">defineGetter</span><span class="token punctuation">(</span>target<span class="token operator">:</span> <span class="token string">'request'</span> <span class="token operator">|</span> <span class="token string">'response'</span><span class="token punctuation">,</span> key<span class="token operator">:</span> PropertyKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">[</span>target<span class="token punctuation">]</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//默认值为false，所以改了一次后，第二次就不能改了</span>
+    configurable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">//由于数据描述符默认值基本都是false，所以得手动设置为true</span>
+    enumerable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">defineSetter</span><span class="token punctuation">(</span>target<span class="token operator">:</span> <span class="token string">'request'</span> <span class="token operator">|</span> <span class="token string">'response'</span><span class="token punctuation">,</span> key<span class="token operator">:</span> PropertyKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* const descriptor=Object.getOwnPropertyDescriptor(ctx,key) */</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* get:descriptor?.get, */</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">[</span>target<span class="token punctuation">]</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> v
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">defineGetter</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span> <span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token function">defineGetter</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span> <span class="token string">'query'</span><span class="token punctuation">)</span>
+<span class="token function">defineGetter</span><span class="token punctuation">(</span><span class="token string">'response'</span><span class="token punctuation">,</span> <span class="token string">'body'</span><span class="token punctuation">)</span>
+<span class="token function">defineSetter</span><span class="token punctuation">(</span><span class="token string">'response'</span><span class="token punctuation">,</span> <span class="token string">'body'</span><span class="token punctuation">)</span>
+<span class="token comment">/* Object.defineProperty(ctx,'body',{
+  get(){
+    return this.response.body
+  },
+  set(v){
+    this.response.body=v
+  }
+}) */</span>
+<span class="token comment">/* console.log(Object.getOwnPropertyDescriptor(ctx,'body')) */</span>
+<span class="token comment">//这样对象的方式比较麻烦，不易于扩展</span>
+<span class="token comment">/* export const ctx:Record&lt;any,any&gt;={
+  get path(){//通样的谁调用指向谁，这里指向application的请求ctx
+    return this.request.path
+  }
+} */</span>
+
+<span class="token comment">//尝试用proxy来做,遇到问题，this无法成功指向原型链下一层,this总是指向proxy本身</span>
+<span class="token comment">/* export const ctx=new Proxy({},{
+  get(target,p,receiver){
+    console.log(target)
+    console.log('****',p)
+    console.log('****')
+  }
+}) */</span>
+</code></pre></div><p><strong>这三个模块都应用的代理模式，通过 ctx 代理到 response 或者 request</strong></p> <p>context 模块中我用的是 Object.defineProperty 进行代理</p> <p><strong>object.definerProperty()</strong></p> <p><strong>基本上数据描述符的默认值都为 false</strong></p> <p><strong>数据描述符 configurable 默认值为 false，所以设置了一次后就不能再设置了</strong></p> <p><strong>当且仅当该属性的 <code>configurable</code> 键值为 <code>true</code> 时，该属性的描述符才能够被改变，同时该属性也能从对应的对象上被删除。</strong></p> <p>为啥不用 proxy 进行代理？请看下面 application 模块</p> <h3 id="_2-中间件处理流程"><a href="#_2-中间件处理流程" class="header-anchor">#</a> 2.中间件处理流程</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> http <span class="token keyword">from</span> <span class="token string">'http'</span>
+<span class="token comment">//用户不能直接修改下面三个对象，可以通过原型模式让他们拿到值，修改的是自身的</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ctx <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./context'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> request <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./request'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> response <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./response'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> EventEmitter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'events'</span>
+
+<span class="token keyword">declare</span> <span class="token keyword">type</span> <span class="token class-name">Middleware</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>ctx<span class="token operator">:</span> Application<span class="token punctuation">[</span><span class="token string">'context'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">any</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//获取函数参数类型元组</span>
+<span class="token keyword">declare</span> <span class="token keyword">type</span> <span class="token class-name">FunctionParamsType<span class="token operator">&lt;</span><span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span></span> <span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token punctuation">(</span>
+  <span class="token operator">...</span>args<span class="token operator">:</span> <span class="token keyword">infer</span> <span class="token constant">P</span>
+<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">any</span>
+  <span class="token operator">?</span> <span class="token constant">P</span>
+  <span class="token operator">:</span> <span class="token builtin">never</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Application</span> <span class="token keyword">extends</span> <span class="token class-name">EventEmitter</span> <span class="token punctuation">{</span>
+  <span class="token comment">//保证每次创建应用都是独立的上下文</span>
+  <span class="token keyword">public</span> context <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
+  <span class="token keyword">public</span> request <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+  <span class="token keyword">public</span> response <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+  <span class="token keyword">public</span> middlewares<span class="token operator">:</span> Middleware<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">public</span> <span class="token function">use</span><span class="token punctuation">(</span>middleware<span class="token operator">:</span> Middleware<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>middlewares<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>middleware<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> handelRequest<span class="token operator">:</span> http<span class="token punctuation">.</span><span class="token function-variable function">RequestListener</span> <span class="token operator">=</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> ctx <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createContext</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span>
+    <span class="token comment">//先默认状态码为404</span>
+    res<span class="token punctuation">.</span>statusCode <span class="token operator">=</span> <span class="token number">404</span>
+    <span class="token comment">//顺序不要搞错，先默认状态码，再执行用户函数才能修改状态码，搞反了就会一直404</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">compose</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> body <span class="token operator">=</span> ctx<span class="token punctuation">.</span>body
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>body<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'&lt;h1&gt;Not found&lt;/h1&gt;'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">//继承自EventEmitter,触发监听的事件</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token function">listen</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token operator">:</span> FunctionParamsType<span class="token operator">&lt;</span>http<span class="token punctuation">.</span>Server<span class="token punctuation">[</span><span class="token string">'listen'</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handelRequest<span class="token punctuation">)</span>
+    server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token function">createContext</span><span class="token punctuation">(</span>
+    req<span class="token operator">:</span> http<span class="token punctuation">.</span>IncomingMessage<span class="token punctuation">,</span>
+    res<span class="token operator">:</span> http<span class="token punctuation">.</span>ServerResponse
+  <span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token string">'context'</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    <span class="token comment">//再进行一次创建对象，以当前应用的为原型，保证每个请求之间上下文独立</span>
+    <span class="token keyword">let</span> ctx <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>context<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> request <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>request<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> response <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>response<span class="token punctuation">)</span>
+    <span class="token comment">//添加属性，短写的都是原生的</span>
+    ctx<span class="token punctuation">.</span>request <span class="token operator">=</span> request <span class="token comment">//自己封装的</span>
+    ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>req <span class="token operator">=</span> ctx<span class="token punctuation">.</span>req <span class="token operator">=</span> req <span class="token comment">//原生的</span>
+    <span class="token comment">//响应</span>
+    ctx<span class="token punctuation">.</span>response <span class="token operator">=</span> response <span class="token comment">//自己封装的</span>
+    ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>res <span class="token operator">=</span> ctx<span class="token punctuation">.</span>res <span class="token operator">=</span> res <span class="token comment">//原生的</span>
+    <span class="token keyword">return</span> ctx
+  <span class="token punctuation">}</span>
+  <span class="token comment">//组合函数，把所有中间件组成一个大的promise</span>
+  <span class="token keyword">public</span> <span class="token function">compose</span><span class="token punctuation">(</span>ctx<span class="token operator">:</span> <span class="token keyword">typeof</span> <span class="token keyword">this</span><span class="token punctuation">.</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//闭包，防止多次调用next()</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token comment">//递归</span>
+    <span class="token keyword">const</span> dispatch <span class="token operator">=</span> <span class="token punctuation">(</span>i<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//直接抛出错误，直接return了</span>
+        <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'next() call multiples times'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      index <span class="token operator">=</span> i
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>middlewares<span class="token punctuation">.</span>length <span class="token operator">===</span> i<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">let</span> middleware <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>middlewares<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+      <span class="token comment">//执行下一个,包装成promise</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment">//捕获执行过程中的错误</span>
+
+        <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token function">middleware</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">dispatch</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//执行第一个</span>
+    <span class="token keyword">return</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token comment">//将功能组合再一起依次执行</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>下面来简单解释下</strong></p> <p><strong>首先解决以下问题</strong></p> <p><strong>1.每次请求的上下文应该是一个独立的上下</strong></p> <p><strong>2.每个应用创建的时候使用的上下文应该是不同的</strong></p> <p>**所以 Application 类开头和 createContext 方法都使用 Object.create()方法创建新对象并指定原型，这样就相互关联起来了，由于原型链又有遮蔽效应所以相互影响小。**这就很妙</p> <p>现在简单描述下请求过程，当请求过来，走 handelRequest 方法</p> <p><img src="https://s2.loli.net/2022/07/13/UtxbgupI54GV3Ki.png" alt="image-20220713113545816"></p> <p><strong>然后创建一个新的上下文</strong></p> <p><img src="https://s2.loli.net/2022/07/13/Ot1VXCSmshJPni3.png" alt="image-20220713113654802"></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">//使用</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token string">'123'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>我们在使用过程中会调用 body，而 ctx 上没有就会通过原型链去查找最终找到 response 模块上，</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">export</span> <span class="token keyword">const</span> response<span class="token operator">:</span> Record<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token punctuation">,</span> <span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  _body<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+  <span class="token keyword">get</span> <span class="token function">body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_body
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">set</span> <span class="token function">body</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>res<span class="token punctuation">.</span>statusCode <span class="token operator">=</span> <span class="token number">200</span>
+    <span class="token comment">/* console.log(this.res.statusCode) */</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_body <span class="token operator">=</span> newValue
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>然后我们在 response 模块进行处理，我们得通过 this 拿到当前的调用对象 ctx。关键就是 this 指向问题，所以用 proxy 代理就不行，proxy 代理不能代理原型上的属性或方法。而通过描述符即 Descriptor 可以。</strong></p> <h4 id="中间件"><a href="#中间件" class="header-anchor">#</a> 中间件</h4> <p>中间件是发布订阅模式的产物，我们使用多次 use，通过一个数组收集起来，当请求来了再调用，为了能够处理异步返回一个大的 promise 进行包装</p> <p><img src="https://s2.loli.net/2022/07/13/MzPhtHWSl8F5bKO.png" alt="image-20220713115106396"></p> <p><strong>通过递归将 promise 串在一起，这就是所谓的洋葱模型</strong></p> <p><strong>注意：</strong></p> <ol><li><strong>koa 默认是洋葱模型调用上一个 next 会走下一个中间件函数</strong></li> <li><strong>异步怎么做呢 koa 中所有的异步操作都要基于 promise</strong></li> <li><strong>koa 内部会将所有的中间件进行组合操作组合成了 一个大的 promise 只要从开头走到了结束就算完成</strong></li> <li><strong>await 和 return 都会等待 promise 执行完毕，return 后面的代码不会执行</strong></li> <li><strong>koa 中的中间件必须增加 await next() 或者 return next ( )否则异步逻辑可能出错</strong></li></ol> <h3 id="_3-错误处理"><a href="#_3-错误处理" class="header-anchor">#</a> 3.错误处理</h3> <p>在 compose 方法中，每执行都要捕获一次错误，然后在 handelRequest 方法中，对大的 promise 进行捕获错误，通过 node 的事件模块告诉给用户,application 类继承了 node 的事件类 EventEmitter</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">public</span> handelRequest<span class="token operator">:</span>http<span class="token punctuation">.</span><span class="token function-variable function">RequestListener</span><span class="token operator">=</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span>res<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> ctx<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createContext</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span>res<span class="token punctuation">)</span>
+    <span class="token comment">//先默认状态码为404</span>
+    res<span class="token punctuation">.</span>statusCode<span class="token operator">=</span><span class="token number">404</span>
+    <span class="token comment">//顺序不要搞错，先默认状态码，再执行用户函数才能修改状态码，搞反了就会一直404</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">compose</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token keyword">let</span> body<span class="token operator">=</span>ctx<span class="token punctuation">.</span>body
+      <span class="token keyword">if</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'&lt;h1&gt;Not found&lt;/h1&gt;'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>e<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token comment">//继承自EventEmitter,触发监听的事件</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>用户用过 on 方法进行监听</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'********'</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022/7/13 12:35:26</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-2a01419c data-v-2a01419c><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-2a01419c><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-2a01419c></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-2a01419c></path></svg></div><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.6ddb7ced.js" defer></script><script src="/assets/js/5.ba03b2d0.js" defer></script><script src="/assets/js/1.8dbbe507.js" defer></script><script src="/assets/js/36.2faeae6a.js" defer></script>
+  </body>
+</html>
