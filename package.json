@@ -4,9 +4,11 @@
   "author": "zeal",
   "scripts": {
     "dev": "vuepress dev .",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress build . && node copy.mjs"
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress build . && node copy.mjs",
+    "build:mac": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build . && node copy.mjs"
   },
   "devDependencies": {
+    "fs-extra": "^11.1.1",
     "glob": "^7.1.6",
     "mime": "^2.4.4",
     "path": "^0.12.7",
