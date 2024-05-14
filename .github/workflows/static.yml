@@ -31,13 +31,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: stepup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm install -g pnpm
+      - name: Build
+        run: pnpm install
+      - name: Deploy
+        run: pnpm build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
-          path: './docs'
+          path: "./docs"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
