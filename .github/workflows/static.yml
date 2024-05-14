@@ -33,8 +33,6 @@ jobs:
         uses: actions/checkout@v3
       - name: stepup node
         uses: actions/setup-node@v4
-        with:
-          node-version: 16
       - name: Install dependencies
         run: npm install -g pnpm
       - name: Build
